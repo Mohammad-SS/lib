@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 from django.db import models
 from PIL import Image
 
+
 # Create your models here.
 class Configurations(models.Model):
     conf_name = models.CharField(max_length=30)
@@ -11,10 +12,12 @@ class Configurations(models.Model):
     pic_url = models.ImageField(upload_to='images' , null=True , blank=True)
     def __str__(self):
         return self.conf_name
-    def save(self):
-        image = Image.open(self.pic_url)
-        image.save(self.pic_url.path)
-        super(Configurations, self).save()
+    # def save(self):
+    #     if (self.pic_url == None ):
+    #         return
+    #     image = Image.open(self.pic_url)
+    #     image.save(self.pic_url.path)
+    #     super(Configurations, self).save()
 
 class YearRange(models.Model):
     low_year = models.CharField(max_length=5)
