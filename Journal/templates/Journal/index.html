@@ -27,7 +27,7 @@
                                 <div class="widget general-image none  widget-none  widget-compact-all" id="2de3d5f8-6dc1-4537-b2de-541c4ff43c43">
                                     <div class="wrapped ">
                                         <div class="widget-body body body-none  body-compact-all">
-                                            <a href="http://online.liverpooluniversitypress.co.uk/" title="Liverpool University Press Online"> <img src="{% static 'Journal/assets/LUP-logo-banner-940-final.jpg' %}" alt="Liverpool University Press Online" /> </a>
+                                            <a href="http://mohammadss.pythonanywhere.com" title="Liverpool University Press Online"> <img src="{% static 'Journal/assets/LUP-logo-banner-940-final.jpg' %}" alt="Liverpool University Press Online" /> </a>
                                         </div>
                                     </div>
                                 </div>
@@ -210,22 +210,12 @@
                           <div
                             class="widget-body body body-regular  body-border-toggle"
                           >
-                            <h1 class="loiTitle">Available Issues</h1>
                             <div
                               class="iconKeyDropZone"
                               data-pb-dropzone="iconKeyDropZone"
                               style="float:right;width:50%;padding-top: 0px"
                             ></div>
                             <div class="volume-list">
-                              <input
-                                type="hidden"
-                                data-year=""
-                                data-name="yearQueried"
-                              /><input
-                                type="hidden"
-                                data-volume=""
-                                data-name="volumeQueried"
-                              />
                               <div
                                 class="volume-list decade slider opened"
                                 id="4028"
@@ -239,15 +229,6 @@
                                 <div
                                   class="block expandable years issues expandedDiv"
                                 >
-                                  <input
-                                    type="hidden"
-                                    data-year=""
-                                    data-name="yearQueried"
-                                  /><input
-                                    type="hidden"
-                                    data-volume=""
-                                    data-name="volumeQueried"
-                                  />
                                   <div
                                     class="volume-list slider opened"
                                     id="28"
@@ -303,77 +284,12 @@
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
-                                                                                <script type="text/javascript">
-                                                                                    $(document).ready(function() {
-                                                                                        var expanded = new Number("1");
-                                                                                        var sliders = $(".slider");
-                                                                                        var counter = 0;
-                                                                                        while (
-                                                                                            counter < expanded &&
-                                                                                            counter < sliders.length
-                                                                                        ) {
-                                                                                            $(sliders[counter]).addClass("opened");
-                                                                                            counter++;
-                                                                                        }
-                                                                                    });
-                                                                                </script>
-                                                                                <script type="text/javascript">
-                                                                                    $(document).ready(function() {
-                                                                                        var expanded = new Number("1");
-                                                                                        var sliders = $(".expandable.issues");
-                                                                                        var counter = 0;
-                                                                                        while (
-                                                                                            counter < expanded &&
-                                                                                            counter < sliders.length
-                                                                                        ) {
-                                                                                            var parent = $(sliders[counter]).closest(
-                                                                                                ".issues"
-                                                                                            );
-                                                                                            $(parent).addClass("expandedDiv");
-                                                                                            var elm = parent.prev(".expander");
-                                                                                            elm.addClass("open");
-                                                                                            var parent1 = $(sliders[counter]).closest(
-                                                                                                ".volumes"
-                                                                                            );
-                                                                                            $(parent1).addClass("expandedDiv");
-                                                                                            var elm2 = parent1.prev(".expander");
-                                                                                            elm2.addClass("open");
-                                                                                            $(sliders[counter]).addClass("expandedDiv");
-                                                                                            var elm3 = $(sliders[counter]).prev(
-                                                                                                ".expander"
-                                                                                            );
-                                                                                            elm3.addClass("open");
-                                                                                            $(sliders[counter])
-                                                                                                .children(".slider")
-                                                                                                .first()
-                                                                                                .addClass("opened");
-                                                                                            counter++;
-                                                                                        }
-                                                                                    });
-
-                                                                                    function getParent(element, selector) {
-                                                                                        var pparent = $(element).parent(selector);
-                                                                                        if (
-                                                                                            typeof pparent == "undefined" ||
-                                                                                            pparent.length == 0
-                                                                                        ) {
-                                                                                            pparent = getParent(
-                                                                                                element.parent(),
-                                                                                                selector
-                                                                                            );
-                                                                                        }
-                                                                                        return pparent;
-                                                                                    }
-                                                                                </script>
-                                                                                <input type="hidden" data-year="" data-name="yearQueried" /><input type="hidden" data-volume="" data-name="volumeQueried" />
                                                                             </div>
-                                                                            <style type="text/css"></style>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-
                                                     </div>
                                                 </div>
                                             </div>
@@ -398,7 +314,6 @@
                     </li>
                     <li class="" aria-selected="false">
                       <a
-                        href="#eb4781ab-f6fa-4f5e-b57c-8668514a5d52-b6de7b7c-de82-45a5-9538-313dd15c6659"
                         title="show Editors"
                         aria-selected="false"
                         aria-expanded="false"
@@ -407,7 +322,6 @@
                     </li>
                     <li class="">
                       <a
-                        href="#eb4781ab-f6fa-4f5e-b57c-8668514a5d52-f1238ef8-4614-4351-ac74-5508a29fb76d"
                         title="show Submissions"
                         aria-selected="false"
                         aria-expanded="false"
@@ -416,7 +330,6 @@
                     </li>
                     <li class="">
                       <a
-                        href="#eb4781ab-f6fa-4f5e-b57c-8668514a5d52-cbd314ed-9160-4efe-a939-d9c107e93a10"
                         title="show Subscriptions"
                         aria-selected="false"
                         aria-expanded="false"
@@ -425,7 +338,6 @@
                     </li>
                     <li class="">
                       <a
-                        href="#eb4781ab-f6fa-4f5e-b57c-8668514a5d52-f1f6c894-fad6-44e6-afa3-1096d5585df0"
                         title="show Contact"
                         aria-selected="false"
                         aria-expanded="false"
@@ -445,21 +357,17 @@
                   <div class="tab-content">
                     <div
                       class="tab-pane active"
-                      id="eb4781ab-f6fa-4f5e-b57c-8668514a5d52-58132d06-cf2f-4e31-a696-f4f2aa0cdd9a"
                     >
                       <div
                         class="tab-pane-content"
-                        data-pb-dropzone="tab-58132d06-cf2f-4e31-a696-f4f2aa0cdd9a"
                         data-pb-dropzone-name="Synopsis"
                       >
                         <div
                           class="widget general-rich-text none  widget-none"
-                          id="61eb1352-e27d-4efd-abef-36684b0be22c"
                         >
                           <div class="wrapped ">
                             <div class="widget-body body body-none ">
                               <div
-                                id="rich-text-61eb1352-e27d-4efd-abef-36684b0be22c"
                                 class="pb-rich-text"
                               >
                                 <p>
