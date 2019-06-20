@@ -1,0 +1,184 @@
+/*carousel */
+.owl-carousel.owl-theme.carousel {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.carousel figure {
+    margin: auto;
+    padding: 0;
+    position: relative;
+    border-color: transparent;
+    border-radius: 0 !important
+}
+.carousel figcaption {
+    position: absolute;
+    z-index: 101;
+    bottom: -1em;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), white);
+    padding: 1em 1em !important;
+}
+.carousel .owl-dot {
+    border: 0;
+    background: transparent
+}
+.carousel .ui.fluid.card {
+    min-height: 150px;
+    margin:0 !important;
+}
+
+
+/* very edge case on LUP homepage: if (viewport === ipad landscape && sidebar != hidden) text in cards reveal is shown but not legible;
+consider adding sidebar open class to push */
+@media only screen and (max-width: 1130px) and (min-width: 961px) {
+ /*   .home #site-sidebar:not(.toggle)~#push .card .ui.slide.active.reveal > .hidden.content, .ui.slide.reveal:hover > .hidden.content {
+    display: none !important;
+    }*/
+
+    .home .ui.slide.active.reveal > .visible.content, .ui.slide.reveal:hover > .visible.content {transform: scale(1.1) translateX(0) !important;}
+}
+/* visually hide page title on home page LUP only*/
+@media (min-width:961px) {
+    h2.home.ui.brand.header {
+        margin-left: -3000em;
+        position: absolute;
+        font-size: 0;
+    }
+}
+/* centre header on /pages, because they have container */
+
+.pages h2.header {
+    text-align:center
+}
+.body-primary.contact h2.huge.ui.header {
+    text-align:center
+}
+/*
+ * One of these should be hidden:
+ */
+.meta .year-published {
+    display: none;
+}
+.meta .date-published {}
+
+/* temporary fixes: TODO: merge into semantic.min.css */
+.menu-has-children a {flex-basis: calc(100% - 2em);}
+.ui.message p:last-of-type {
+    margin-bottom:  0;
+}
+
+/* Various hacks for alignment requests, needs sorting out */
+body.books div.basic.ui.segment h2.header,
+body.collections div.basic.ui.segment h2.header,
+body.series div.basic.ui.segment h2.header {
+    text-align: left;
+    max-width: inherit !important;
+}
+
+/* Collections page specific title should be centered, above generic catch all, causing issue. */
+body.collections h2,
+body.imprints .huge.ui.header {
+    text-align: center !important;
+}
+
+/*.cms blockquote, .cms dd, .cms dt, .cms h1, .cms h2, .cms h3, .cms h4, .cms h5, .cms h6, .cms li, .cms p, .cms pre*/
+body.collections .cms p, body.series .cms p {
+    max-width: inherit !important;
+}
+
+body.collections div#browser {
+    max-width: 55rem !important;
+    margin: auto auto;
+}
+
+/* body .cms-content-body could be a little non-specific, test. */
+body.pages div.cms-content-body,
+body.pages div.cms-content-body div.cards,
+body.imprints .sixteen.wide.column,
+body.collections .cms-content-body,
+body .cms-content-body {
+    max-width: 55rem !important;
+    /*margin: auto auto !important;*/ /*Martyn - this is causing problems (see below) */
+}
+/*@media (min-width: 992px) {
+    .pages main {max-width:80ch !important; margin:auto}
+}*/
+/* hack that Martyn needs to sort out properly - the problem is that on some pages (e.g. https://www.liverpooluniversitypress.co.uk/books/id/38649/) the CMS body is 55rem wide, but with auto:auto margin, centering it. They want it (the block) left-aligned. */
+.cms-content-body {
+    /* remove the auto:auto margin */
+    /* but that seems to break other things! I have no idea ... */
+    /*margin: inherit;*/
+}
+/* maybe try to make it specific to book pages? */
+body.books section.cms.segment .cms-content-body {
+    margin: inherit !important;
+}
+.cms-content-body div.left.aligned.segment {
+    /* remove left padding so it lines up with the heading */
+    padding-left: 0;
+}
+
+body.library .cms-content-body,
+body.library h2.huge.ui.header {
+    text-align: left !important;
+    max-width: 55rem !important;
+    margin: 0 0 1em !important;
+}
+
+/* hack to align series and child pages as they should be to the left */
+body.series .cms-content-body,
+body.series .cms * {
+    max-width: 100% !important;
+}
+
+/* A hack to get the text to display properly in a full text search result - removes flex display on the blockquote (but it seems to be needed above that) */
+#index-card .column.content, #index-card .column.meta, #index-card .wrapping-context, .index-card.item div.full-text-results blockquote.content {
+    display: block !important;
+}
+
+/* due to the non-specific line corrections targeting we'll have to watch items inside cms-content-body */
+.ui.card {
+    margin-left: .75em !important;
+    margin-right: .75em !important;
+}
+
+/* about-us / meet the team page no wrap player names */
+.slug-about-us .ui.attached.bottom.button {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* about-us / meet the team anchor link in page */
+.slug-about-us ol.ui.stackable.fluid.eight.item.waypoint.menu * {
+    font-size: .86rem;
+}
+
+/* slug-open-access align center cms text */
+.slug-open-access .cms-content-body p:first-child {
+    text-align: center;
+}
+
+/*client would prefer home page width to be larger than other pages*/
+body.home .cms-content-body {
+  max-width: 64rem !important;
+}
+
+/* hack to close menu for book series page on load */
+.accordion #nav-content-series {
+  display:none;
+}
+
+html div .ui.four.stackable.cards .card.ie11-target-card {
+    display: block !important;
+}
+
+/* Hack to fix the search bar - temporary; Martyn please pull in the changes from your local version? */
+#qs .search-aligner-fix {
+    width: 100%;
+}
+#qs .ui.form {
+    position: absolute;
+    top: 55px;
+}
+/* end hack */

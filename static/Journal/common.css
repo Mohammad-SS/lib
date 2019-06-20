@@ -1,0 +1,256 @@
+*
+{
+	font-family: HP Simplified,Verdana,Arial;
+	color: #000;
+}
+
+body
+{
+	margin: 0px;
+	font-family: HP Simplified,Verdana,Arial;
+	line-height: 1;
+	overflow: hidden;
+	color: #000;
+	background-color: #0A9BD8;
+}
+
+/* Button.js stylesheet Start */
+
+.BtnFontNormal
+{
+	color: #000;
+	font-weight: Bold;
+	font-size: 16px;
+	line-height:normal;
+	margin:0px;
+	padding:0px;
+}
+
+.BtnFontOver
+{
+	color: #444;
+	font-weight: Bold;
+	font-size: 16px;
+	line-height:normal;
+	margin:0px;
+	padding:0px;
+}
+
+.BtnFontDown
+{
+	color: #222;
+	font-weight: Bold;
+	font-size: 16px;
+	line-height:normal;
+	margin:0px;
+	padding:0px;
+}
+
+.BtnFontDisable
+{
+	color: #888;
+	font-weight: Bold;
+	font-size: 16px;
+	line-height:normal;
+	margin:0px;
+	padding:0px;
+}
+
+.opbuttontbl tr td
+{
+	display: table-cell !important;
+	vertical-align: middle;
+}
+
+/* Button.js stylesheet End */
+
+.maincontainer
+{
+	position: relative;
+	z-index: 1000000000000000;
+	top: 0px;
+	left: 0px;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	border-spacing:0px;
+	background-color: #0A9BD8;
+	width: 100%;
+	height: 80px;
+	border-left: 0px black solid;
+	border-right: 0px black solid;
+	border-top: 1px black solid;
+	border-bottom: 1px black solid;
+	outline-offset:0px;
+}
+
+.lyrcontainer
+{
+	position: relative; 
+	width: 1024px; 
+	height: 80px; 
+	z-index: 2; 
+	top: 0px; 
+	left: 0px; 
+	overflow-y: hidden;
+	background-color: transparent; 
+	border:none;
+	margin:0;
+	padding:0; 
+	display: none;
+}
+
+.bhotbl
+{
+	height: 100%;
+	width: 100%;
+	border: none;
+	border-collapse:collapse;
+	border-spacing:0px;
+}
+
+.bhotbl tr td
+{
+	vertical-align: middle;
+	display: table-cell;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+
+.imglogo
+{
+	 width: 30px; 
+	 height: 30px;
+	 vertical-align:middle;
+	 margin-left:10px;
+}
+
+.EditNormal
+{
+	FONT-SIZE: 16px;
+	width: 150px;
+	height: 22px;
+	Font-weight: normal;
+}
+
+.normalFont
+{
+	font-size: 15px;
+	COLOR: white;
+	Font-weight: normal;
+	line-height:normal;
+	margin:0px;
+	padding:0px;
+	word-wrap:break-word;
+	line-height:18px;
+}
+
+.containercantlogin
+{
+	position: absolute;
+	text-align: right;
+	bottom: 10px;
+	right: 5px;
+}
+
+.normalFontLink
+{
+	font-size: 15px;
+	COLOR: blue;
+	font-weight: normal;
+	cursor: pointer;
+}
+
+.tblelements
+{
+	width: 100%;
+	border-collapse: collapse;
+	border: 0px;
+}
+
+.pinbox
+{
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	margin-right: 1px;
+}
+
+.floating
+{
+	float: left;
+}
+
+/** For valpwd.htm **/
+.imageButtonRightGPA
+{
+	margin: 6px 0px 0px 6px;
+	float: left;
+	width: 45px;
+	height: 45px;
+}
+
+.imageButtonLeftGPA
+{
+	margin: 6px 2px 2px 57px;
+	float: left;
+	width: 45px;
+	height: 45px;
+}
+
+.containermainvalpwd
+{
+	width: 210px;
+	height: 350px;
+	border: solid 3px #0A9BD8;
+	background-color: white;
+	position:relative;
+}
+
+.normalFontRedBold
+{
+	font-size: 16px;
+	COLOR: red;
+	font-weight: Bold;
+}
+
+.normalFontBlack
+{
+	font-size: 16px;
+}
+
+.normalFontBoldBlack
+{
+	font-size: 12px;
+	font-weight: Bold;
+}
+
+.cancelpinpadbutton
+{
+	position: absolute; 
+	left: 32px; 
+	top: 227px;
+	z-index: 2; 
+}
+
+.backspacepinpadbutton
+{
+	position: absolute; 
+	left: 134px; 
+	top: 227px;
+	z-index: 2; 
+}
+
+.containermessagevalpwd
+{
+	border: 1px #0A9BD8 solid; 
+}
+
+.no-selection {
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none; /* IE10+ */
+}
