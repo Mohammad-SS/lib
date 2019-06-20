@@ -11266,14 +11266,14 @@ var abTestingLogUtil = {
         return doiFirst + "/" + doiLast;
     }
 };
-$(function() {
-    var $parent = $(".js__abTestingTrigger");
-    if ($parent.size() > 0) {
-        var expType = $parent.data('exp-type');
-        var itemSelector = $parent.data('child-selector') ? $parent.data('child-selector') : ".art_title";
-        abTestingLogUtil.logSearchResultsByHrefSelector(expType, $parent.find(itemSelector));
-    }
-});
+// $(function() {
+//     var $parent = $(".js__abTestingTrigger");
+//     if ($parent.size() > 0) {
+//         var expType = $parent.data('exp-type');
+//         var itemSelector = $parent.data('child-selector') ? $parent.data('child-selector') : ".art_title";
+//         abTestingLogUtil.logSearchResultsByHrefSelector(expType, $parent.find(itemSelector));
+//     }
+// });
 (function($) {
     var desktopWidth = 992;
     $(document).ready(function() {
