@@ -4,25 +4,13 @@
 <head data-pb-dropzone="head">
     <meta charset="UTF-8">
     <title>Browse our list of journals</title>
-    <!-- <link rel="stylesheet" type="text/css" href="/wro/gxjn~product.css"> -->
     {% load static%}
     <link rel="stylesheet" type="text/css" href="{% static 'Journal/style.css' %}" />
-    <script type="text/javascript" src="js.js"></script>
+    <script type="text/javascript" src="{% static 'Journal/js.js' %}"></script>
+        <script type="text/javascript" src="{% static 'jquery-3.4.1.min.js' %}"></script>
 </head>
 
 <body class="pb-ui">
-    <!-- <script type="text/javascript">
-        if (false) {
-            document.getElementById("skipNavigationLink").onclick = function skipElement() {
-                var element = document.getElementById('');
-                if (element == null || element == undefined) {
-                    element = document.getElementsByClassName('').item(0);
-                }
-                element.setAttribute('tabindex', '0');
-                element.focus();
-            }
-        }
-    </script> -->
     <div id="pb-page-content" data-ng-non-bindable>
         <div data-pb-dropzone="main" data-pb-dropzone-name="Main">
             <div class="widget layout-two-columns none  widget-none  widget-compact-all" id="0cee4d54-554c-40bf-9458-6cbbdbc89cdd">
@@ -43,23 +31,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                <!-- <div class="widget quickSearchWidget none  widget-none  widget-compact-all" id="fa14d125-deeb-4b24-9f4f-7c045275a835">
-                                    <div class="wrapped ">
-                                        <div class="widget-body body body-none  body-compact-all">
-                                            <div class="quickSearchFormContainer">
-                                                <form action="/action/doSearch" name="quickSearch" class="quickSearchForm " title="Quick Search" method="get"><span class="simpleSearchBoxContainer">                        <input name="AllField"               class="searchText magicsuggest main-search-field autocomplete"               value=""               type="search" id="searchText"               title="Type search term here"               placeholder="Enter words / phrases / DOI / ISBN / authors / keywords / etc." autocomplete="off"               data-history-items-conf="3"               data-publication-titles-conf="3"               data-group-titles-conf="3"               data-publication-items-conf="3"               data-topics-conf="3"               data-contributors-conf="3"               data-display-labels="true"               data-auto-complete-target="auto-complete"               data-fuzzy-suggester="false"               data-auto-complete-max-words="7"               data-auto-complete-max-chars="32"/>                </span>                                                    <span class="citationSearchBoxContainer hidden">    <input name="quickLinkJournal"           class="journalName mediumTextInput  autocomplete ui-autocomplete-input"           value=""           type="text"           title="Journal or Book Series"           placeholder="Journal or Book Series"           autoComplete="off"           autoPopulate="true"           data-auto-complete-target="title-auto-complete"           data-history-items-conf="3"           data-publication-titles-conf="3"           data-topics-conf="3"           data-contributors-conf="3"/>    <input type="hidden" name="quickLink" value="true" />    <input class="year smallTextInput" title="Year" type="text" name="quickLinkYear" value="" size="15" autocomplete="false" placeholder="Year"pattern="([0-9]){1,4}$" />    <input class="volume smallTextInput" title="Volume" type="text" name="quickLinkVolume" value="" size="15" autocomplete="false" placeholder="Volume" />    <input class="issue smallTextInput" title="Issue" type="text" name="quickLinkIssue" value="" size="15" autocomplete="false" placeholder="Issue" />    <input class="page smallTextInput" title="Page" type="text" name="quickLinkPage" value="" size="15" autocomplete="false" placeholder="Page" /></span>                                                    <span class="searchDropDownDivRight">                                                                                    <label for="searchInSelector" class="visuallyhidden">Search in:</label>        <select  id="searchInSelector" class="custom-dropdown js__searchInSelector">                                                                            <option value="" data-search-in="default">Anywhere</option>                                                            </select></span>                                                    <input class="mainSearchButton searchButtons pointer" title="search" type="submit" value="Search" /></form>
-                                            </div>
-                                            <div class="advancedSearchLinkDropZone" data-pb-dropzone="advancedSearchLinkDropZone">
-                                                <div class="widget general-html none  widget-none  widget-compact-horizontal" id="c08451a5-e81b-4993-8065-28e7a66092b2">
-                                                    <div class="wrapped ">
-                                                        <div class="widget-body body body-none  body-compact-horizontal"><a href="/action/doSearch">Advanced search</a></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> -->
                                 <div class="widget literatumBreadcrumbs none no-margin widget-none" id="e1ef0f84-8e13-49be-a35e-6ad098349e3f">
                                     <div class="wrapped ">
                                         <div class="widget-body body body-none ">
