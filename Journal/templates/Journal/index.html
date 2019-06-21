@@ -205,139 +205,52 @@
                               style="float:right;width:50%;padding-top: 0px"
                             ></div>
                             <div class="volume-list">
-                              <div
-                                class="volume-list decade slider opened"
-                                id="4028"
-                              >
-                                <a
-                                  href="#"
-                                  data-attr-vol="2010"
-                                  class="title opener"
-                                  >2010 - 2018</a
-                                >
-                                <div
-                                  class="block expandable years issues expandedDiv"
-                                >
-                                  <div
-                                    class="volume-list slider opened"
-                                    id="28"
-                                  >
-                                    <a
-                                      class="opener"
-                                      data-attr-vol="28"
-                                      href="#"
-                                      >Volume 28</a
-                                    >
-                                    <div class="block">
-                                      <div
-                                        class="issue row js_issue"
-                                        data-year="2018"
-                                        data-volume="28"
-                                      >
-                                        <span class="access loiAccessIconSpan">
-                                          <img
-                                            src="{% static 'Journal/assets/access_no.gif' %}"
-                                            alt="No Access"
-                                            title="No Access"
-                                            class="accessIcon noAccess"
-                                          />
-                                        </span>
+                                <div class="volume-list decade slider">
+                                    <!-- years-->
+                                    <a href="#" data-attr-vol="2000" class="title opener">2000 - 2009</a>
+                                    <div class="block expandable years issues">
+                                        <div class="volume-list slider" id="19">
+                                            <!-- volumes -->
+                                            <a class="opener" data-attr-vol="19" href="#">Volume 19</a>
+                                            <div class="block">
+                                                <div class="issue row js_issue" data-year="2009" data-volume="19">
+                                                    <!-- issue -->
+                                                    <span class="access loiAccessIconSpan">
+                                                                  <img src="assets/access_no.gif" alt="No Access" title="No Access" class="accessIcon noAccess">
+                                                                </span>
                                                                                             <a href="issue.html">
-                                          Volume 28, Issue 2
-                                        </a>
+                                                                  Volume 19, Issue 2
+                                                                </a>
                                                                                             <span class="loiIssueCoverDateText">
-                                          (December 2018,
-                                        </span>
+                                                                  (December 2009,
+                                                                </span>
                                                                                             <span class="loiIssuePages">
-                                          pp. 157–304).
-                                        </span>
+                                                                  pp. 87–193).
+                                                                </span>
                                                                                         </div>
-                                                                                        <div class="issue row js_issue" data-year="2018" data-volume="28">
+                                                                                        <!-- end issue -->
+                                                                                        <div class="issue row js_issue" data-year="2009" data-volume="19">
+                                                                                            <!-- issue -->
                                                                                             <span class="access loiAccessIconSpan">
-                                          <img
-                                            src="{% static 'Journal/assets/access_no.gif' %}"
-                                            alt="No Access"
-                                            title="No Access"
-                                            class="accessIcon noAccess"
-                                          />
-                                        </span>
+                                                                  <img src="assets/access_no.gif" alt="No Access" title="No Access" class="accessIcon noAccess">
+                                                                </span>
                                                                                             <a href="issue.html">
-                                          Volume 28, Issue 1
-                                        </a>
+                                                                  Volume 19, Issue 1
+                                                                </a>
                                                                                             <span class="loiIssueCoverDateText">
-                                          (June 2018,
-                                        </span>
+                                                                  (December 2009,
+                                                                </span>
                                                                                             <span class="loiIssuePages">
-                                          pp. 1–155).
-                                        </span>
+                                                                  pp. 1–86).
+                                                                </span>
                                                                                         </div>
+                                                                                        <!-- end issue -->
                                                                                     </div>
                                                                                 </div>
-                                                                                <script type="text/javascript">
-                                                                                    $(document).ready(function() {
-                                                                                        var expanded = new Number("1");
-                                                                                        var sliders = $(".slider");
-                                                                                        var counter = 0;
-                                                                                        while (
-                                                                                            counter < expanded &&
-                                                                                            counter < sliders.length
-                                                                                        ) {
-                                                                                            $(sliders[counter]).addClass("opened");
-                                                                                            counter++;
-                                                                                        }
-                                                                                    });
-                                                                                </script>
-                                                                                <script type="text/javascript">
-                                                                                    $(document).ready(function() {
-                                                                                        var expanded = new Number("1");
-                                                                                        var sliders = $(".expandable.issues");
-                                                                                        var counter = 0;
-                                                                                        while (
-                                                                                            counter < expanded &&
-                                                                                            counter < sliders.length
-                                                                                        ) {
-                                                                                            var parent = $(sliders[counter]).closest(
-                                                                                                ".issues"
-                                                                                            );
-                                                                                            $(parent).addClass("expandedDiv");
-                                                                                            var elm = parent.prev(".expander");
-                                                                                            elm.addClass("open");
-                                                                                            var parent1 = $(sliders[counter]).closest(
-                                                                                                ".volumes"
-                                                                                            );
-                                                                                            $(parent1).addClass("expandedDiv");
-                                                                                            var elm2 = parent1.prev(".expander");
-                                                                                            elm2.addClass("open");
-                                                                                            $(sliders[counter]).addClass("expandedDiv");
-                                                                                            var elm3 = $(sliders[counter]).prev(
-                                                                                                ".expander"
-                                                                                            );
-                                                                                            elm3.addClass("open");
-                                                                                            $(sliders[counter])
-                                                                                                .children(".slider")
-                                                                                                .first()
-                                                                                                .addClass("opened");
-                                                                                            counter++;
-                                                                                        }
-                                                                                    });
+                                                                                <!--  end volumes -->
 
-                                                                                    function getParent(element, selector) {
-                                                                                        var pparent = $(element).parent(selector);
-                                                                                        if (
-                                                                                            typeof pparent == "undefined" ||
-                                                                                            pparent.length == 0
-                                                                                        ) {
-                                                                                            pparent = getParent(
-                                                                                                element.parent(),
-                                                                                                selector
-                                                                                            );
-                                                                                        }
-                                                                                        return pparent;
-                                                                                    }
-                                                                                </script>
-                                                                                <input type="hidden" data-year="" data-name="yearQueried" /><input type="hidden" data-volume="" data-name="volumeQueried" />
+
                                                                             </div>
-                                                                            <style type="text/css"></style>
                                                                         </div>
                                                                     </div>
                                                                 </div>
