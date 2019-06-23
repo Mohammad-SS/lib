@@ -134,27 +134,30 @@
                                                                 <a href="#" class="title opener">{{year}}</a>
                                                                                                                 <div class="block expandable years issues">
                                                                                                                     <!-- volumes -->
+                                                                                                                    {% for volume in year.Volumes %}
                                                                                                                     <div class="volume-list slider" id="19">
-                                                                                                                        <a class="opener" data-attr-vol="19" href="#">Volume 19</a>
+                                                                                                                        <a class="opener" data-attr-vol="19" href="#">{{volume}}</a>
                                                                                                                         <div class="block">
                                                                                                                             <!-- issue -->
+                                                                                                                            {% for issue in volume.issue %}
                                                                                                                             <div class="issue row js_issue" data-year="2009" data-volume="19">
                                                                                                                                 <span class="access loiAccessIconSpan">
                                                                                               <img src="{% static 'Journal/assets/access_no.gif' %}" alt="No Access" title="No Access" class="accessIcon noAccess">
                                                                                             </span>
                                                                                                                                 <a href="issue.html">
-                                                                                              Volume 19, Issue 2
+                                                                                              {{issue.volume}}, Issue {{issue.issue_number}}
                                                                                             </a>
                                                                                                                                 <span class="loiIssueCoverDateText">
-                                                                                              (December 2009,
+                                                                                              ({{issue.month}} {{issue.year}},
                                                                                             </span>
                                                                                                                                 <span class="loiIssuePages">
-                                                                                              pp. 87–193).
+                                                                                              pp. {{issue.pp}}).
                                                                                             </span>
                                                                                                                                 <!-- end issue -->
+                                                                                                                            {% endfor %}
                                                                                                                             </div>
                                                                                                                         </div>
-                                                                                                                        <!--  end volumes -->
+                                                                                                                    {% endfor %}
                                                                                                                     </div>
                                                                                                                 </div>
                                                           {% endfor %}
