@@ -41,6 +41,8 @@ class Article(models.Model):
     keywords = models.TextField(null=True , blank=True)
     abstract = models.TextField(null=True , blank=True)
     issue = models.ForeignKey(Issues , on_delete=models.CASCADE)
+    cats = [('index' , 'index') , ('revs' , 'reviews') , ('RA' , 'research articles')]
+    cat = models.CharField(max_length=6 , choices=cats , default='RA')
     def __str__(self):
         return self.title
 
