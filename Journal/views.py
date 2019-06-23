@@ -23,5 +23,5 @@ def issues(request , vol , iss):
             article.authors = article.authors.split(",")
         if article.keywords:
             article.keywords = article.keywords.split(",")
-    context = {'articles' : articles , 'issue' : issue }
+    context = {'articles' : articles , 'issue' : issue , 'volume' : volume , 'vol' : vol , 'iss' : iss }
     return render(request , 'Journal/issue.html' , context)

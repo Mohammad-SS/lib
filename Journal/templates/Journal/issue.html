@@ -174,15 +174,22 @@
                                                                                                 {% endfor %}
                                                                                                 </span></div>
                                                                                             </div>
-                                                                                            <div class="art_meta citation"><span class="issueInfo">28(2)</span><span class="articlePageRange "><span class="issueInfoComma">, </span>pp. 263<span>–</span>292</span>
+                                                                                            <div class="art_meta citation"><span class="issueInfo">{{vol}}({{iss}})</span> 
+                                                                                            {% if article.pp %}
+                                                                                            <span class="articlePageRange "><span class="issueInfoComma">, </span>pp.
+                                                                                            {{article.pp}}
+                                                                                            {% endif %}
+                                                                                            </span>
                                                                                             </div>
                                                                                             <div class="tocListKeywords">
                                                                                                 <p class="fulltext">
+                                                                                                {% if article.keywords %}
                                                                                                     <font size="-1"><span class="keywordsLabel">Keywords: </span>
                                                                                                     {% for author in article.keywords %}
                                                                                                     <span class="entryAuthor linkable hlFld-ContribAuthor">{{author}} ,</span> 
                                                                                                     {% endfor %}
                                                                                                     </font>
+                                                                                            {% endif %}
                                                                                                 </p>
                                                                                             </div>
                                                                                             <div class="tocDeliverFormatsLinks"><a class="ref nowrap abs" href="article.html1">Abstract</a> | <a class="ref nowrap references" href="/doi/ref/10.3828/rs.2018.11">References</a> | <a class="ref nowrap pdf" target="_blank" title="Opens new window" href="/doi/pdf/10.3828/rs.2018.11">PDF (508 KB)</a>
