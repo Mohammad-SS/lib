@@ -52,8 +52,10 @@
                                                                                                             <div class="wrapped ">
                                                                                                                 <div class="widget-body body body-none  body-compact-all">
                                                                                                                     <ul>
-                                                                                                                        <li><a href="issue.html">Current issue</a>
-                                                                                                                            </li><li><a href="book.html">List of issues</a></li></ul>
+                                                                                                                        <li>
+                                                                                                                <a href="{% url 'issues' vol=lastv.volume_number iss=lasti.issue_number %}">Current issue</a>                                                                                                                            
+                                                                                                                </li>
+                                                                                                                <li><a href="{% url 'index' %}">List of issues</a></li>                                                                                                                </ul>
                                                                                                                 </div>
                                                                                                             </div>
                                                                                                         </div>
@@ -65,8 +67,7 @@
                                                                                                             <div class="wrapped ">
                                                                                                                 <div class="widget-body body body-none  body-compact-all">
                                                                                                                     <ul>
-                                                                                                                        <li><a href="http://ebiz.turpin-distribution.com/products/235145-romani-studies-print-and-online.aspx">Subscribe</a>
-                                                                                                                </li></ul></div>
+                                                                                                                        </ul></div>
                                                                                                             </div>
                                                                                                         </div>
                                                                                                     </div>
@@ -84,7 +85,7 @@
                                                         <div class="widget literatumBookIssueNavigation none  widget-none" id="613df098-501e-46af-a4d3-ffb7351c4a9d">
                                                             <div class="wrapped ">
                                                                 <div class="widget-body body body-none ">
-                                                                    <div class="pager issueBookNavPager"> <span class="journalNavLeftTd">                    <span class="prev placedLeft">                <a href="index.html">                    &lt; Previous issue                </a>            </span>                                                                        </span> <span class="journalNavRightTd">            </span></div>
+                                                                    <div class="pager issueBookNavPager"> <span class="journalNavLeftTd">                    <span class="prev placedLeft">                      </span>                                                                        </span> <span class="journalNavRightTd">            </span></div>
                                                                 </div>
                                                             </div>
                                                         </div>

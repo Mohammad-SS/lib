@@ -72,9 +72,10 @@
                                                                                                     <div class="widget-body body body-none  body-compact-all">
                                                                                                         <ul>
                                                                                                             <li>
-                                                                                                                <a href="/toc/rost/current">Current issue</a>
+                                                                                                                <a href="{% url 'issues' vol=lastv.volume_number iss=lasti.issue_number %}">Current issue</a>
+                                                                                                                {% comment %} {{lasti}} {{lastv}} {% endcomment %}
                                                                                                             </li>
-                                                                                                            <li><a href="/loi/rost">List of issues</a></li>
+                                                                                                            <li><a href="{% url 'index' %}">List of issues</a></li>
                                                                                                         </ul>
                                                                                                     </div>
                                                                                                 </div>
@@ -87,21 +88,12 @@
                                                                                                 <div class="wrapped ">
                                                                                                     <div class="widget-body body body-none  body-compact-all">
                                                                                                         <ul>
-                                                                                                            <li>
-                                                                                                                <a href="http://ebiz.turpin-distribution.com/products/235145-romani-studies-print-and-online.aspx" target="_blank">Subscribe</a
-                                                                              >
-                                                                            </li>
                                                                             <li>
                                                                               <a href="#info" target="_self"
                                                                                 >Journal Information</a
                                                                               >
                                                                             </li>
-                                                                            <li>
-                                                                              <a
-                                                                                href="/action/doUpdateAlertSettings?action=addJournal&amp;journalCode=rost"
-                                                                                >Get TOC alerts</a
-                                                                              >
-                                                                            </li>
+                                                                            
                                                                           </ul>
                                                                         </div>
                                                                       </div>

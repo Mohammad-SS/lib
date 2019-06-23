@@ -11,10 +11,14 @@ def index(request):
         year.Volumes = year.volumes_set.all().order_by('-volume_number')
         for volume in year.Volumes:
             volume.issue = volume.issues_set.all().order_by('-issue_number')
-    context = {'years' : years} 
+    lastV = models.Volumes.objects.all().order_by('-volume_number')[:1]
+    lastI = lastV[0].issues_set.all().order_by('-issue_number')[:1]
+    context = {'years' : years , 'lasti' : lastI[0] , 'lastv' : lastV[0]} 
     return render(request , "Journal/index.html" , context)
 
 def issues(request , vol , iss):
+    lastV = models.Volumes.objects.all().order_by('-volume_number')[:1]
+    lastI = lastV[0].issues_set.all().order_by('-issue_number')[:1]
     volume = models.Volumes.objects.get(volume_number=vol)
     issue = models.Issues.objects.get(issue_number=iss)
     articles = issue.article_set.all()
@@ -23,5 +27,5 @@ def issues(request , vol , iss):
             article.authors = article.authors.split(",")
         if article.keywords:
             article.keywords = article.keywords.split(",")
-    context = {'articles' : articles , 'issue' : issue , 'volume' : volume , 'vol' : vol , 'iss' : iss }
+    context = {'articles' : articles , 'issue' : issue , 'volume' : volume , 'vol' : vol , 'iss' : iss , 'lastv' : lastV[0] , 'lasti' : lastI[0]}
     return render(request , 'Journal/issue.html' , context)
