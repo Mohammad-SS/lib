@@ -15,10 +15,13 @@ def index(request):
     return render(request , "Journal/index.html" , context)
 
 def issues(request , vol , iss):
-    # volume = models.Volumes.objects.get(volume_number=vol)
+    volume = models.Volumes.objects.get(volume_number=vol)
     issue = models.Issues.objects.get(issue_number=iss)
     articles = issue.article_set.all()
-    # for article in articles:
-        # article.authors = article.authors.splite(",")
+    for article in articles:
+        if article.authors:
+            article.authors = article.authors.split(",")
+        if article.keywords:
+            article.keywords = article.keywords.split(",")
     context = {'articles' : articles , 'issue' : issue }
     return render(request , 'Journal/issue.html' , context)

@@ -112,28 +112,33 @@
                                                                                     <div class="subject heading-1">Research Article</div>
                                                                                 </h2>
                                                                                 {% for article in articles %}
-                                                                                {% comment %} {% if article.cat !='RA' %} {% endcomment %}
-                                                                                {% comment %} {% continue %}                                                                                 {% endcomment %}
-                                                                                {% comment %} {% endif %} {% endcomment %}
+                                                                                {% if article.cat == "RA" %}
                                                                                 <table border="0" width="100%" class="articleEntry">
                                                                                     <tbody><tr>
                                                                                         <td class="accessIconContainer">
                                                                                             <div><img src="{% static 'Journal/assets/access_no.gif' %}" alt="No Access" title="No Access" class="accessIcon noAccess"></div>
                                                                                             <div class="ccIcon"></div>
                                                                                         </td>
-                                                                                        <td align="right" valign="top" width="10"><input class="jsOnly tocToolCheckBox" type="checkbox" name="doi" value="10.3828/rs.2018.11"><br></td>
+                                                                                        <td align="right" valign="top" width="10"></td>
                                                                                         <td valign="top">
-                                                                                            <div class="art_title linkable"><a class="ref nowrap" href="article.html1"><span class="hlFld-Title">{{Article.title}}</span></a></div>
+                                                                                            <div class="art_title linkable"><a class="ref nowrap" href="article.html1"><span class="hlFld-Title">{{article.title}}</span></a></div>
                                                                                             <div class="tocAuthors afterTitle">
-                                                                                                <div class="articleEntryAuthor all"><span class="articleEntryAuthorsLinks"><a class="entryAuthor linkable hlFld-ContribAuthor" href="/author/Padure%2C+Cristian">Cristian Padure</a> <a class="entryAuthor linkable hlFld-ContribAuthor" href="/author/de+Pascale%2C+Stefano">Stefano De Pascale</a> <a class="entryAuthor linkable hlFld-ContribAuthor" href="/author/Adamou%2C+Evangelia">Evangelia Adamou</a></span></div>
+                                                                                                <div class="articleEntryAuthor all"><span class="articleEntryAuthorsLinks">
+                                                                                                {% for author in article.authors %}
+                                                                                                <span class="entryAuthor linkable hlFld-ContribAuthor">{{author}} ,</span> 
+                                                                                                
+                                                                                                {% endfor %}
+                                                                                                </span></div>
                                                                                             </div>
                                                                                             <div class="art_meta citation"><span class="issueInfo">28(2)</span><span class="articlePageRange "><span class="issueInfoComma">, </span>pp. 263<span>–</span>292</span>
                                                                                             </div>
                                                                                             <div class="tocListKeywords">
                                                                                                 <p class="fulltext">
-                                                                                                    <font size="-1"><span class="keywordsLabel">Keywords: </span><a href="/keyword/Romani">Romani</a>, <a href="/keyword/Mexico">Mexico</a>, <a href="/keyword/Spanish">Spanish</a>,
-                                                                                                        <a href="/keyword/Variation">variation</a>,
-                                                                                                        <a href="/keyword/Attributive+Clauses">attributive clauses</a></font>
+                                                                                                    <font size="-1"><span class="keywordsLabel">Keywords: </span>
+                                                                                                    {% for author in article.keywords %}
+                                                                                                    <span class="entryAuthor linkable hlFld-ContribAuthor">{{author}} ,</span> 
+                                                                                                    {% endfor %}
+                                                                                                    </font>
                                                                                                 </p>
                                                                                             </div>
                                                                                             <div class="tocDeliverFormatsLinks"><a class="ref nowrap abs" href="article.html1">Abstract</a> | <a class="ref nowrap references" href="/doi/ref/10.3828/rs.2018.11">References</a> | <a class="ref nowrap pdf" target="_blank" title="Opens new window" href="/doi/pdf/10.3828/rs.2018.11">PDF (508 KB)</a>
@@ -145,59 +150,97 @@
                                                                                         </td>
                                                                                     </tr>
                                                                                 </tbody></table>
+                                                                                {% endif %}
                                                                                 {% endfor %}
                                                                                 <h2 class="tocHeading">
                                                                                     <div class="subject heading-1">Book Reviews</div>
                                                                                 </h2>
+                                                                                {% for article in articles %}
+                                                                                {% if article.cat == "revs" %}
                                                                                 <table border="0" width="100%" class="articleEntry">
                                                                                     <tbody><tr>
                                                                                         <td class="accessIconContainer">
                                                                                             <div><img src="{% static 'Journal/assets/access_no.gif' %}" alt="No Access" title="No Access" class="accessIcon noAccess"></div>
                                                                                             <div class="ccIcon"></div>
                                                                                         </td>
-                                                                                        <td align="right" valign="top" width="10"><input class="jsOnly tocToolCheckBox" type="checkbox" name="doi" value="10.3828/rs.2018.12"><br></td>
+                                                                                        <td align="right" valign="top" width="10"></td>
                                                                                         <td valign="top">
-                                                                                            <div class="art_title linkable"><a class="ref nowrap" href="article.html2"><span class="hlFld-Title">Reviews</span></a></div>
+                                                                                            <div class="art_title linkable"><a class="ref nowrap" href="article.html1"><span class="hlFld-Title">{{article.title}}</span></a></div>
                                                                                             <div class="tocAuthors afterTitle">
-                                                                                                <div class="articleEntryAuthor all"><span class="articleEntryAuthorsLinks"><a class="entryAuthor linkable hlFld-ContribAuthor" href="/author/Hajn%C3%A1czky%2C+Tam%C3%A1s">Tamás Hajnáczky</a> <a class="entryAuthor linkable hlFld-ContribAuthor" href="/author/O%27Nions%2C+Helen">Helen O’Nions</a></span></div>
+                                                                                                <div class="articleEntryAuthor all"><span class="articleEntryAuthorsLinks">
+                                                                                                {% for author in article.authors %}
+                                                                                                <span class="entryAuthor linkable hlFld-ContribAuthor">{{author}} ,</span> 
+                                                                                                
+                                                                                                {% endfor %}
+                                                                                                </span></div>
                                                                                             </div>
-                                                                                            <div class="art_meta citation"><span class="issueInfo">28(2)</span><span class="articlePageRange "><span class="issueInfoComma">, </span>pp. 293<span>–</span>301</span>
+                                                                                            <div class="art_meta citation"><span class="issueInfo">28(2)</span><span class="articlePageRange "><span class="issueInfoComma">, </span>pp. 263<span>–</span>292</span>
                                                                                             </div>
-                                                                                            <div class="tocListKeywords"></div>
-                                                                                            <div class="tocDeliverFormatsLinks"><a class="ref nowrap abs" href="article.html2">Citation</a> | <a class="ref nowrap pdf" target="_blank" title="Opens new window" href="/doi/pdf/10.3828/rs.2018.12">PDF (95 KB)</a>
-                                                                                                <div id="Absrs201812" class="previewViewSection tocPreview">
-                                                                                                    <div class="closeButton" onclick="showHideTocPublicationAbs('10.3828/rs.2018.12', 'Absrs201812');"></div>
+                                                                                            <div class="tocListKeywords">
+                                                                                                <p class="fulltext">
+                                                                                                    <font size="-1"><span class="keywordsLabel">Keywords: </span>
+                                                                                                    {% for author in article.keywords %}
+                                                                                                    <span class="entryAuthor linkable hlFld-ContribAuthor">{{author}} ,</span> 
+                                                                                                    {% endfor %}
+                                                                                                    </font>
+                                                                                                </p>
+                                                                                            </div>
+                                                                                            <div class="tocDeliverFormatsLinks"><a class="ref nowrap abs" href="article.html1">Abstract</a> | <a class="ref nowrap references" href="/doi/ref/10.3828/rs.2018.11">References</a> | <a class="ref nowrap pdf" target="_blank" title="Opens new window" href="/doi/pdf/10.3828/rs.2018.11">PDF (508 KB)</a>
+                                                                                                <div id="Absrs201811" class="previewViewSection tocPreview">
+                                                                                                    <div class="closeButton" onclick="showHideTocPublicationAbs('10.3828/rs.2018.11', 'Absrs201811');"></div>
                                                                                                     <p class="previewContent"></p>
                                                                                                 </div>
                                                                                             </div>
                                                                                         </td>
                                                                                     </tr>
                                                                                 </tbody></table>
+                                                                                {% endif %}
+                                                                                {% endfor %}
                                                                                 <h2 class="tocHeading">
                                                                                     <div class="subject heading-1">Index</div>
                                                                                 </h2>
+                                                                                {% for article in articles %}
+                                                                                {% if article.cat == "index" %}
                                                                                 <table border="0" width="100%" class="articleEntry">
                                                                                     <tbody><tr>
                                                                                         <td class="accessIconContainer">
                                                                                             <div><img src="{% static 'Journal/assets/access_no.gif' %}" alt="No Access" title="No Access" class="accessIcon noAccess"></div>
                                                                                             <div class="ccIcon"></div>
                                                                                         </td>
-                                                                                        <td align="right" valign="top" width="10"><input class="jsOnly tocToolCheckBox" type="checkbox" name="doi" value="10.3828/rs.2018.13"><br></td>
+                                                                                        <td align="right" valign="top" width="10"></td>
                                                                                         <td valign="top">
-                                                                                            <div class="art_title linkable"><a class="ref nowrap" href="article.html3"><span class="hlFld-Title">Index to Volume 28</span></a></div>
-                                                                                            <div class="art_meta citation"><span class="issueInfo">28(2)</span><span class="articlePageRange "><span class="issueInfoComma">, </span>pp. 303<span>–</span>304</span>
+                                                                                            <div class="art_title linkable"><a class="ref nowrap" href="article.html1"><span class="hlFld-Title">{{article.title}}</span></a></div>
+                                                                                            <div class="tocAuthors afterTitle">
+                                                                                                <div class="articleEntryAuthor all"><span class="articleEntryAuthorsLinks">
+                                                                                                {% for author in article.authors %}
+                                                                                                <span class="entryAuthor linkable hlFld-ContribAuthor">{{author}} ,</span> 
+                                                                                                
+                                                                                                {% endfor %}
+                                                                                                </span></div>
                                                                                             </div>
-                                                                                            <div class="tocListKeywords"></div>
-                                                                                            <div class="tocDeliverFormatsLinks"><a class="ref nowrap abs" href="article.html3">Citation</a> | <a class="ref nowrap pdf" target="_blank" title="Opens new window" href="/doi/pdf/10.3828/rs.2018.13">PDF (69 KB)</a>
-                                                                                                <div id="Absrs201813" class="previewViewSection tocPreview">
-                                                                                                    <div class="closeButton" onclick="showHideTocPublicationAbs('10.3828/rs.2018.13', 'Absrs201813');"></div>
+                                                                                            <div class="art_meta citation"><span class="issueInfo">28(2)</span><span class="articlePageRange "><span class="issueInfoComma">, </span>pp. 263<span>–</span>292</span>
+                                                                                            </div>
+                                                                                            <div class="tocListKeywords">
+                                                                                                <p class="fulltext">
+                                                                                                    <font size="-1"><span class="keywordsLabel">Keywords: </span>
+                                                                                                    {% for author in article.keywords %}
+                                                                                                    <span class="entryAuthor linkable hlFld-ContribAuthor">{{author}} ,</span> 
+                                                                                                    {% endfor %}
+                                                                                                    </font>
+                                                                                                </p>
+                                                                                            </div>
+                                                                                            <div class="tocDeliverFormatsLinks"><a class="ref nowrap abs" href="article.html1">Abstract</a> | <a class="ref nowrap references" href="/doi/ref/10.3828/rs.2018.11">References</a> | <a class="ref nowrap pdf" target="_blank" title="Opens new window" href="/doi/pdf/10.3828/rs.2018.11">PDF (508 KB)</a>
+                                                                                                <div id="Absrs201811" class="previewViewSection tocPreview">
+                                                                                                    <div class="closeButton" onclick="showHideTocPublicationAbs('10.3828/rs.2018.11', 'Absrs201811');"></div>
                                                                                                     <p class="previewContent"></p>
                                                                                                 </div>
                                                                                             </div>
                                                                                         </td>
                                                                                     </tr>
                                                                                 </tbody></table>
-                                                                            </div> <input type="hidden" name="href" value="issue.html"> <input type="hidden" name="title" value="Romani Studies (2018)"> </form>
+                                                                                {% endif %}
+                                                                                {% endfor %}
+                                                                            </div> </form>
                                                                     </div>
                                                                 </div>
                                                             </div>
