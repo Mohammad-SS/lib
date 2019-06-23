@@ -128,8 +128,10 @@
                                                         <div class="iconKeyDropZone" data-pb-dropzone="iconKeyDropZone" style="float:right;width:50%;padding-top: 0px"></div>
                                                         <div class="volume-list">
                                                           <!-- years-->
+                                                          {% for year in years %}
+                                                          
                                                             <div class="volume-list decade slider">
-                                                                <a href="#" class="title opener">2000 - 2009</a>
+                                                                <a href="#" class="title opener">{{year}}</a>
                                                                                                                 <div class="block expandable years issues">
                                                                                                                     <!-- volumes -->
                                                                                                                     <div class="volume-list slider" id="19">
@@ -154,9 +156,9 @@
                                                                                                                         </div>
                                                                                                                         <!--  end volumes -->
                                                                                                                     </div>
-
-
                                                                                                                 </div>
+                                                          {% endfor %}
+
                                                                                                     </div>
                                                                                                 </div>
                                                                                             </div>

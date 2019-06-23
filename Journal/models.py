@@ -12,13 +12,7 @@ class Configurations(models.Model):
     pic_url = models.ImageField(upload_to='images' , null=True , blank=True)
     def __str__(self):
         return self.conf_name
-    # def save(self):
-    #     if (self.pic_url == None ):
-    #         return
-    #     image = Image.open(self.pic_url)
-    #     image.save(self.pic_url.path)
-    #     super(Configurations, self).save()
-
+    
 class YearRange(models.Model):
     low_year = models.CharField(max_length=5)
     high_year = models.CharField(max_length=5)
