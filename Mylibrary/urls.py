@@ -21,7 +21,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$' , views.index )
+    url(r'^$' , views.index ),
+    url(r'^issues/(?P<vol>[0-9]+)/(?P<iss>[0-9]+)/$', views.issues , name='issues'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 

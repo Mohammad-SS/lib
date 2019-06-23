@@ -144,7 +144,7 @@
                                                                                                                                 <span class="access loiAccessIconSpan">
                                                                                               <img src="{% static 'Journal/assets/access_no.gif' %}" alt="No Access" title="No Access" class="accessIcon noAccess">
                                                                                             </span>
-                                                                                                                                <a href="issue.html">
+                                                                                                                                <a href="{% url 'issues' vol=volume.volume_number iss=issue.issue_number %}">
                                                                                               {{issue.volume}}, Issue {{issue.issue_number}}
                                                                                             </a>
                                                                                                                                 <span class="loiIssueCoverDateText">
@@ -160,8 +160,7 @@
                                                                                                                     </div>
                                                                                                                     {% endfor %}
                                                                                                                 </div>
-                                                          {% endfor %}
-
+                                                                                                                {% endfor %}
                                                                                                     </div>
                                                                                                 </div>
                                                                                             </div>
