@@ -103,14 +103,6 @@
                                                                     <div class="tocListWidgetContainer activeWidget">
                                                                         <form name="frmAbs">
                                                                             <section class="tocTools">
-                                                                                <fieldset>
-                                                                                    <div class="tocListDropZone float-right" data-pb-dropzone="tocListDropZone"> </div>
-                                                                                    <div class="jsOnly publicationToolContainer">
-                                                                                        <div class="publicationToolCheckboxContainer"> <input onclick="onClickMarkAll(frmAbs,'')" id="markall" type="checkbox" name="markall" value=""><span>Select All</span> </div>
-                                                                                        <div class="publicationTooldropdownContainer">
-                                                                                            <span class="dropdownLabel">            For selected items:        </span> <select name="articleTool" class="items-choice publicationToolSelect" title="Article Tools"><option value="">Please select</option><option value="/personalize/addFavoritePublication">Add to Favorites</option><option value="/action/addCitationAlert?referrer=%2Ftoc%2Frost%2Fcurrent">Track Citation</option><option value="/action/showCitFormats">Download Citation</option><option value="/action/showMailPage">Email</option></select>                                                                                            </div>
-                                                                                    </div>
-                                                                                </fieldset>
                                                                             </section>
                                                                             <div class="tocListtDropZone2" data-pb-dropzone="tocListtDropZone2"> </div>
                                                                             <div class="tocContent">
@@ -119,6 +111,10 @@
                                                                                 <h2 class="tocHeading">
                                                                                     <div class="subject heading-1">Research Article</div>
                                                                                 </h2>
+                                                                                {% for article in articles %}
+                                                                                {% comment %} {% if article.cat !='RA' %} {% endcomment %}
+                                                                                {% comment %} {% continue %}                                                                                 {% endcomment %}
+                                                                                {% comment %} {% endif %} {% endcomment %}
                                                                                 <table border="0" width="100%" class="articleEntry">
                                                                                     <tbody><tr>
                                                                                         <td class="accessIconContainer">
@@ -127,7 +123,7 @@
                                                                                         </td>
                                                                                         <td align="right" valign="top" width="10"><input class="jsOnly tocToolCheckBox" type="checkbox" name="doi" value="10.3828/rs.2018.11"><br></td>
                                                                                         <td valign="top">
-                                                                                            <div class="art_title linkable"><a class="ref nowrap" href="article.html1"><span class="hlFld-Title">Variation between the copula <i>si</i> “to be” and the <i>l</i>-clitics in Romani spoken in Mexico</span></a></div>
+                                                                                            <div class="art_title linkable"><a class="ref nowrap" href="article.html1"><span class="hlFld-Title">{{Article.title}}</span></a></div>
                                                                                             <div class="tocAuthors afterTitle">
                                                                                                 <div class="articleEntryAuthor all"><span class="articleEntryAuthorsLinks"><a class="entryAuthor linkable hlFld-ContribAuthor" href="/author/Padure%2C+Cristian">Cristian Padure</a> <a class="entryAuthor linkable hlFld-ContribAuthor" href="/author/de+Pascale%2C+Stefano">Stefano De Pascale</a> <a class="entryAuthor linkable hlFld-ContribAuthor" href="/author/Adamou%2C+Evangelia">Evangelia Adamou</a></span></div>
                                                                                             </div>
@@ -149,6 +145,7 @@
                                                                                         </td>
                                                                                     </tr>
                                                                                 </tbody></table>
+                                                                                {% endfor %}
                                                                                 <h2 class="tocHeading">
                                                                                     <div class="subject heading-1">Book Reviews</div>
                                                                                 </h2>

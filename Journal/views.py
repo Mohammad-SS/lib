@@ -15,8 +15,10 @@ def index(request):
     return render(request , "Journal/index.html" , context)
 
 def issues(request , vol , iss):
-    volume = models.Volumes.objects.get(volume_number=vol)
-    issue = volume.issues_set.get(issue_number=iss)
+    # volume = models.Volumes.objects.get(volume_number=vol)
+    issue = models.Issues.objects.get(issue_number=iss)
     articles = issue.article_set.all()
-    context = {'volume' : volume , 'issue' : issue , 'articles' : articles }
+    # for article in articles:
+        # article.authors = article.authors.splite(",")
+    context = {'articles' : articles , 'issue' : issue }
     return render(request , 'Journal/issue.html' , context)

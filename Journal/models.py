@@ -36,7 +36,7 @@ class Issues(models.Model):
 
 class Article(models.Model):
     title = models.TextField()
-    author = models.CharField(max_length=100 , null=True , blank=True)
+    authors = models.CharField(max_length=400 , null=True , blank=True)
     pp = models.CharField(max_length=8 , null=True , blank=True)
     keywords = models.TextField(null=True , blank=True)
     abstract = models.TextField(null=True , blank=True)
