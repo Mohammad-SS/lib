@@ -37,6 +37,10 @@ def articlesabs(request , pk):
     article = models.Article.objects.get(id=pk)
     lastV = models.Volumes.objects.all().order_by('-volume_number')[:1]
     lastI = lastV[0].issues_set.all().order_by('-issue_number')[:1]
+    if article.authors:
+            article.authors = article.authors.split(",")
+    if article.keywords:
+            article.keywords = article.keywords.split(",")
     context = {'article' : article , 'lastv' : lastV[0] , 'lasti' : lastI[0]}
     return render(request , 'Journal/abs.html' , context)
     # return HttpResponse("HELLO!")
@@ -46,6 +50,10 @@ def articlesref(request , pk):
     article = models.Article.objects.get(id=pk)
     lastV = models.Volumes.objects.all().order_by('-volume_number')[:1]
     lastI = lastV[0].issues_set.all().order_by('-issue_number')[:1]
+    if article.authors:
+            article.authors = article.authors.split(",")
+    if article.keywords:
+            article.keywords = article.keywords.split(",")
     context = {'article' : article , 'lastv' : lastV[0] , 'lasti' : lastI[0]}
     return render(request , 'Journal/refs.html' , context)
     
@@ -54,10 +62,10 @@ def articlespdf(request , pk):
     article = models.Article.objects.get(id=pk)
     lastV = models.Volumes.objects.all().order_by('-volume_number')[:1]
     lastI = lastV[0].issues_set.all().order_by('-issue_number')[:1]
-    # if request.session['error']:
-        # err = request.session['error']
-    # else:
-        # err = False
+    if article.authors:
+            article.authors = article.authors.split(",")
+    if article.keywords:
+            article.keywords = article.keywords.split(",")
     context = {'article' : article , 'lastv' : lastV[0] , 'lasti' : lastI[0]}
     return render(request , 'Journal/pdfs.html' , context )    
 
