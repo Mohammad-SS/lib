@@ -51,9 +51,11 @@ def articlesref(request , pk):
     lastV = models.Volumes.objects.all().order_by('-volume_number')[:1]
     lastI = lastV[0].issues_set.all().order_by('-issue_number')[:1]
     if article.authors:
-            article.authors = article.authors.split(",")
+        article.authors = article.authors.split(",")
     if article.keywords:
-            article.keywords = article.keywords.split(",")
+        article.keywords = article.keywords.split(",")
+    if article.refrences:
+        article.refrences = article.refrences.split("|")
     context = {'article' : article , 'lastv' : lastV[0] , 'lasti' : lastI[0]}
     return render(request , 'Journal/refs.html' , context)
     
