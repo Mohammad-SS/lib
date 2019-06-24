@@ -91,14 +91,24 @@
                                                         <!-- /abstract content -->
                                                         <!-- fulltext content -->
                                                         <div class="hlFld-Fulltext">
+                                                            <table class="sectionHeading" width="100%" cellpadding="0" cellspacing="0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <th align="left" valign="middle" width="95%" class="head-a">References</th>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
                                                             <table border="0" class="references">
                                                                 <tbody>
                                                                     {% for ref in article.refrences %}
-                                                                    <tr id="atypb1">
+                                                                    <tr id="R1">
                                                                         <td> </td>
                                                                         <td valign="top">
-                                                                            {{ref}}
-                                                                            <br> {% comment %} <a class="google-scholar" href="{{http://scholar.google.com/scholar?hl=en&q=|add:ref}}">Google Scholar</a></td> {% endcomment %}
+                                                                            <span class="NLM_string-name">
+                                                                                {{ref}}
+                                                                            </span>.
+
+                                                                        </td>
                                                                     </tr>
                                                                     {% endfor %}
                                                                 </tbody>
