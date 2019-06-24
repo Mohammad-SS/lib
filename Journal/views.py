@@ -54,10 +54,10 @@ def articlespdf(request , pk):
     article = models.Article.objects.get(id=pk)
     lastV = models.Volumes.objects.all().order_by('-volume_number')[:1]
     lastI = lastV[0].issues_set.all().order_by('-issue_number')[:1]
-    if request.session['error']:
-        err = request.session['error']
-    else:
-        err = False
+    # if request.session['error']:
+        # err = request.session['error']
+    # else:
+        # err = False
     context = {'article' : article , 'lastv' : lastV[0] , 'lasti' : lastI[0] , 'error' : err }
     return render(request , 'Journal/pdfs.html' , context )    
 
