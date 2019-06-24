@@ -106,8 +106,12 @@
                                                                         <td valign="top">
                                                                             <span class="NLM_string-name" style="font:12px 'Helvetica Neue', Helvetica, Arial, sans-serif">
                                                                                 {{ref}}
+                                                                                {% comment %} {{mohammad|add:}} {% endcomment %}
+                                                                                {% comment %} {{"https://scholar.google.com/scholar?hl=en&q="|add:ref}} {% endcomment %}
                                                                             </span>.
-
+                                                                            <a class="google-scholar" href="{{'https://scholar.google.com/scholar?hl=en&q='|add:ref}}">
+                                                                            Google Scholar
+                                                                            </a>
                                                                         </td>
                                                                     </tr>
                                                                     {% endfor %}
