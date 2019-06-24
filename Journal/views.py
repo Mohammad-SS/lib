@@ -57,7 +57,8 @@ def articlesref(request , pk):
     if article.refrences:
         article.refrences = article.refrences.split("|")
     context = {'article' : article , 'lastv' : lastV[0] , 'lasti' : lastI[0]}
-    return render(request , 'Journal/refs.html' , context)
+    return HttpResponse(article.refrences)
+    # return render(request , 'Journal/refs.html' , context)
     
 
 def articlespdf(request , pk):
