@@ -142,7 +142,7 @@
                                                                                                     </font>
                                                                                                 </p>
                                                                                             </div>
-                                                                                            <div class="tocDeliverFormatsLinks"><a class="ref nowrap abs" href="article.html1">Abstract</a> | <a class="ref nowrap references" href="/doi/ref/10.3828/rs.2018.11">References</a> | <a class="ref nowrap pdf" target="_blank" title="Opens new window" href="/doi/pdf/10.3828/rs.2018.11">PDF (508 KB)</a>
+                                                                                            <div class="tocDeliverFormatsLinks"><a class="ref nowrap abs" href="{% url 'articlesabs' pk=article.id %}">Abstract</a> | <a class="ref nowrap references" href="{% url 'articlerefs' pk=article.id %}">References</a> | <a class="ref nowrap pdf" target="_blank" title="Opens new window" href="{% url 'articlepdf' pk=article.id %}">PDF (508 KB)</a>
                                                                                                 <div id="Absrs201811" class="previewViewSection tocPreview">
                                                                                                     <div class="closeButton" onclick="showHideTocPublicationAbs('10.3828/rs.2018.11', 'Absrs201811');"></div>
                                                                                                     <p class="previewContent"></p>
@@ -166,7 +166,7 @@
                                                                                         </td>
                                                                                         <td align="right" valign="top" width="10"></td>
                                                                                         <td valign="top">
-                                                                                            <div class="art_title linkable"><a class="ref nowrap" href="article.html1"><span class="hlFld-Title">{{article.title}}</span></a></div>
+                                                                                            <div class="art_title linkable"><a class="ref nowrap" href="{% url 'articlesabs' pk=article.id %}"><span class="hlFld-Title">{{article.title}}</span></a></div>
                                                                                             <div class="tocAuthors afterTitle">
                                                                                                 <div class="articleEntryAuthor all"><span class="articleEntryAuthorsLinks">
                                                                                                 {% for author in article.authors %}
@@ -193,7 +193,7 @@
                                                                                             {% endif %}
                                                                                                 </p>
                                                                                             </div>
-                                                                                            <div class="tocDeliverFormatsLinks"><a class="ref nowrap abs" href="article.html1">Abstract</a> | <a class="ref nowrap references" href="/doi/ref/10.3828/rs.2018.11">References</a> | <a class="ref nowrap pdf" target="_blank" title="Opens new window" href="/doi/pdf/10.3828/rs.2018.11">PDF (508 KB)</a>
+                                                                                            <div class="tocDeliverFormatsLinks"><a class="ref nowrap abs" href="{% url 'articlesabs' pk=article.id %}">Abstract</a> | <a class="ref nowrap references" href="{% url 'articlerefs' pk=article.id %}">References</a> | <a class="ref nowrap pdf" target="_blank" title="Opens new window" href="{% url 'articlepdf' pk=article.id %}">PDF (508 KB)</a>
                                                                                                 <div id="Absrs201811" class="previewViewSection tocPreview">
                                                                                                     <div class="closeButton" onclick="showHideTocPublicationAbs('10.3828/rs.2018.11', 'Absrs201811');"></div>
                                                                                                     <p class="previewContent"></p>
@@ -217,7 +217,7 @@
                                                                                         </td>
                                                                                         <td align="right" valign="top" width="10"></td>
                                                                                         <td valign="top">
-                                                                                            <div class="art_title linkable"><a class="ref nowrap" href="article.html1"><span class="hlFld-Title">{{article.title}}</span></a></div>
+                                                                                            <div class="art_title linkable"><a class="ref nowrap" href="{% url 'articlesabs' pk=article.id %}"><span class="hlFld-Title">{{article.title}}</span></a></div>
                                                                                             <div class="tocAuthors afterTitle">
                                                                                                 <div class="articleEntryAuthor all"><span class="articleEntryAuthorsLinks">
                                                                                                 {% for author in article.authors %}
@@ -237,7 +237,7 @@
                                                                                                     </font>
                                                                                                 </p>
                                                                                             </div>
-                                                                                            <div class="tocDeliverFormatsLinks"><a class="ref nowrap abs" href="article.html1">Abstract</a> | <a class="ref nowrap references" href="/doi/ref/10.3828/rs.2018.11">References</a> | <a class="ref nowrap pdf" target="_blank" title="Opens new window" href="/doi/pdf/10.3828/rs.2018.11">PDF (508 KB)</a>
+                                                                                            <div class="tocDeliverFormatsLinks"><a class="ref nowrap abs" href="{% url 'articlesabs' pk=article.id %}">Abstract</a> | <a class="ref nowrap references" href="{% url 'articlerefs' pk=article.id %}">References</a> | <a class="ref nowrap pdf" target="_blank" title="Opens new window" href="/doi/pdf/10.3828/rs.2018.11">PDF (508 KB)</a>
                                                                                                 <div id="Absrs201811" class="previewViewSection tocPreview">
                                                                                                     <div class="closeButton" onclick="showHideTocPublicationAbs('10.3828/rs.2018.11', 'Absrs201811');"></div>
                                                                                                     <p class="previewContent"></p>
