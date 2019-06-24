@@ -81,9 +81,9 @@
                                                             <div class="loginForm">
                                                                 <h4 class="accessDenialLoginHeader">Log In</h4>
                                                                 <p class="note">If you have personal access to this content, log in with your username and password here:</p>
-                                                                {% if error %}
-                                                                <p class="note">{{error}}</p>
-                                                                {% endif %}
+                                                                {% comment %} {% if error %} {% endcomment %}
+                                                                {% comment %} <p class="note">{{error}}</p> {% endcomment %}
+                                                                {% comment %} {% endif %} {% endcomment %}
                                                                 <form action="{% url 'userlogin' pk=article.id %}" name="frmLogin" class="note denialLogin" method="post">
                                                                 {% csrf_token %}
                                                                     <table border="0">
