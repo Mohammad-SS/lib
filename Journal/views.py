@@ -58,7 +58,7 @@ def articlespdf(request , pk):
         # err = request.session['error']
     # else:
         # err = False
-    context = {'article' : article , 'lastv' : lastV[0] , 'lasti' : lastI[0] , 'error' : err }
+    context = {'article' : article , 'lastv' : lastV[0] , 'lasti' : lastI[0]}
     return render(request , 'Journal/pdfs.html' , context )    
 
 def login(request , pk):
