@@ -10,4 +10,5 @@ admin.site.register(models.Volumes)
 admin.site.register(models.Issues)
 admin.site.register(models.Article)
 admin.site.register(models.YearRange)
+admin.site.register(models.users)
 

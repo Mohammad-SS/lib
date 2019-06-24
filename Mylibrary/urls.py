@@ -23,6 +23,11 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$' , views.index  , name='index'),
     url(r'^issues/(?P<vol>[0-9]+)/(?P<iss>[0-9]+)/$', views.issues , name='issues'),
+    url(r'^issues/abs/(?P<pk>[0-9]+)$', views.articlesabs , name='articleabs'),
+    url(r'^issues/ref/(?P<pk>[0-9]+)$', views.articlesref , name='articlerefs'),
+    url(r'^issues/pdf/(?P<pk>[0-9]+)$', views.articlespdf , name='articlepdf'),
+    url(r'^purchase/(?P<pk>[0-9]+)$', views.login , name='userlogin'),
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 

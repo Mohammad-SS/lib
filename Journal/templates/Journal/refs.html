@@ -1,0 +1,303 @@
+{% extends "Journal/base.html" %} {% load static %} {% block content %}
+<div class="wrapped ">
+    <div class="widget-body body body-none  body-compact-all">
+        <div class="pb-columns row-fluid gutterless">
+            <div class="width_2_3">
+                <div data-pb-dropzone="left" class="pb-autoheight">
+                    <div class="widget literatumBookIssueNavigation none  widget-none" id="71b933c5-5099-4ea2-833e-e5c5a3b30ebb">
+                        <div class="wrapped ">
+                            <div class="widget-body body body-none ">
+                                <div class="pager issueBookNavPager"> <span class="journalNavLeftTd">            </span> <span class="journalNavRightTd">           <span class="next">       <a href="http://online.liverpooluniversitypress.co.uk/doi/abs/10.3828/rs.2018.8">           Next article &gt;       </a>   </span>                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget literatumPublicationContentWidget none  widget-none" id="1ede5b6d-b12e-4a67-8124-ca12f03ef9ca">
+                        <div class="wrapped ">
+                            <div class="widget-body body body-none ">
+                                <script type="text/javascript">
+                                </script>
+                                <script type="text/javascript" src="/swfobject.js"></script>
+                                <script type="text/javascript">
+                                    function addFlashMovie(id, flv) {
+                                        var flashvars = {
+                                            file: flv,
+                                            type: 'flv'
+                                        };
+                                        var params = {
+                                            allowfullscreen: true
+                                        };
+                                        var attributes = {};
+                                        swfobject.embedSWF('/flvplayer.swf', id, "352", "288", "7.0.0", false, flashvars, params, attributes);
+                                    }
+
+                                    function addFlashMovie(id, flv, image) {
+                                        var flashvars = {
+                                            file: flv,
+                                            type: 'flv',
+                                            image: image
+                                        };
+                                        var params = {
+                                            allowfullscreen: true
+                                        };
+                                        var attributes = {};
+                                        swfobject.embedSWF('/flvplayer.swf', id, "352", "288", "7.0.0", false, flashvars, params, attributes);
+                                    }
+                                </script>
+                                <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+                                <div class="articleMeta ja">
+                                    <div class="hlFld-Title">
+                                        <div class="publicationContentTitle">
+                                            <h1>
+                                                {{article.title}}
+                                            </h1>
+                                        </div>
+                                    </div>
+                                    <div class="articleMetaDrop publicationContentDropZone" data-pb-dropzone="articleMetaDropZone"> </div>
+                                    <div class="publicationContentAuthors">
+                                        <div class="hlFld-ContribAuthor"><span class="contribDegrees">
+                                        {% for author in article.authors %}
+                                        <a class="entryAuthor">{{author}}</a>
+                                        {% endfor %}
+                                        <a href="#d2300e115" class="tooltipTrigger infoIcon"><span class="ui-helper-hidden-accessible">Related information</span></a>
+                                            </span>
+                                        </div>
+                                        <div class="NLM_bio"></div>
+                                        <div class="hlFld-AuthorNotes"></div>
+                                    </div>
+                                    <div class="articleMetaDrop publicationContentDropZone publicationContentDropZone1" data-pb-dropzone="articleMetaDropZone1"> </div>
+                                    <div class="publicationContentDoi"> <a href="{% url 'articleabs' pk=article.id %}">{% url 'articleabs' pk=article.id %}</a> </div>
+                                    <div> </div>
+                                </div>
+                                <div class="publication-tabs ja publication-tabs-dropdown">
+                                    <div class="tabs tabs-widget">
+                                        <ul class="tab-nav" role="tablist">
+                                            <li role="tab"> <a href="{% url 'articleabs' pk=article.id %}" class="show-abstract">                                                                        Abstract                                                            </a> </li>
+                                            <li  class="active" role="tab"> <a href="{% url 'articlerefs' pk=article.id %}" class="show-references">                                References                        </a> </li>
+                                            <li role="tab"> <a href="{% url 'articlepdf' pk=article.id %}" class="show-pdf" target="_self">                                        PDF                                </a> </li>
+                                        </ul>
+                                        <div class="tab-content ">
+                                            <div class="tab tab-pane active">
+                                                <article class="article hideMathJax">
+
+
+
+                                                    <p class="fulltext"></p>
+                                                    <!-- abstract content -->
+                                                    <div class="hlFld-Abstract">
+                                                        <p class="fulltext"></p>
+                                                    </div>
+                                                    <!-- /abstract content -->
+                                                    <!-- fulltext content -->
+                                                    <div class="hlFld-Fulltext">
+                                                        <table border="0" class="references">
+                                                            <tbody>
+                                                                {% for ref in article.references %}
+                                                                <tr id="atypb1">
+                                                                    <td> </td>
+                                                                    <td valign="top">
+                                                                    {{ref}}
+                                                                    <br>
+                                                                     {% comment %} <a class="google-scholar" href="{{http://scholar.google.com/scholar?hl=en&q=|add:ref}}">Google Scholar</a></td> {% endcomment %}
+                                                                </tr>
+                                                                {% endfor %}
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <!-- /fulltext content -->
+                                                </article>
+                                            </div>
+                                            <div class="tab tab-pane" id="relatedContent"> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget layout-two-columns none  widget-none" id="a9ce7376-7618-4a73-9e63-47edbaf2729c">
+                            <div class="wrapped ">
+                                <div class="widget-body body body-none ">
+                                    <div class="pb-columns row-fluid ">
+                                        <div class="width_1_2">
+                                            <div data-pb-dropzone="left" class="pb-autoheight">
+                                                <div class="widget general-html none  widget-none" id="b32bae11-55cb-4862-b6fd-a0a9213faee3">
+                                                    <div class="wrapped ">
+                                                        <div class="widget-body body body-none ">
+                                                            <div style="margin: 7px 0 15px;"> <span class="__dimensions_badge_embed__" data-doi="10.3828/rs.2018.7" data-hide-zero-citations="true"></span>
+                                                                <script async="" src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="width_1_2">
+                                            <div data-pb-dropzone="right" class="pb-autoheight">
+                                                <div class="widget general-html none  widget-none" id="ea990bfc-3200-4582-b249-50d8f5f128d7">
+                                                    <div class="wrapped ">
+                                                        <div class="widget-body body body-none ">
+                                                            <div style="margin: 7px 0 15px;">
+                                                                <!-- Altmetric Code START -->
+                                                                <script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+                                                                <div data-badge-details="right" data-badge-type="medium-donut" data-doi="10.3828/rs.2018.7" data-condensed="true" data-hide-no-mentions="true" class="altmetric-embed altmetric-hidden" data-uuid="387fab89-164c-02b1-f7d4-1fee18c0722c"></div>
+                                                                <!-- Altmetric Code END -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget layout-one-column none  widget-none" id="032709ee-045e-4aa9-8020-b6ba5472bd2b">
+                            <div class="wrapped ">
+                                <div class="widget-body body body-none ">
+                                    <div class="pb-columns row-fluid">
+                                        <div class="width_1_1">
+                                            <div data-pb-dropzone="center">
+                                                <div class="widget general-html alignCenter  widget-none" id="1f004ca1-303e-4288-ba60-e502766e9395">
+                                                    <div class="wrapped ">
+                                                        <div class="widget-body body body-none ">
+                                                            <script src="//api.growkudos.com/widgets/article/10.3828/rs.2018.7?omit_icons=true"></script>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="width_1_3">
+                    <div data-pb-dropzone="right" class="pb-autoheight">
+                        <div class="widget literatumSeriesNavigationCompactWidget none  widget-none  widget-compact-all" id="c0280445-5db2-4d4f-a983-9bddd4ae9d1e">
+                            <div class="wrapped ">
+                                <div class="widget-body body body-none  body-compact-all">
+                                    <div class="seriesNav boxWidget"> <span class="nav">            <a href="https://online.liverpooluniversitypress.co.uk/toc/rost/28/1">&lt;</a>        </span>
+                                        <div class="title">
+                                            <h3>Issue Details</h3>
+                                        </div>
+                                        <div class="issue"> <span class="strong pubTitle">Romani Studies</span> <br> <br>
+                                            <div> <br>
+                                                <div class="seriesNavMainDropZone" data-pb-dropzone="seriesNavMainDropZone">
+                                                    <div class="widget layout-one-column none margin-bottom-15px widget-emphasis" id="8a9aa114-7633-46fa-b53a-732acf70a747">
+                                                        <div class="wrapped ">
+                                                            <div class="widget-body body body-emphasis ">
+                                                                <div class="pb-columns row-fluid">
+                                                                    <div class="width_1_1">
+                                                                        <div data-pb-dropzone="center">
+                                                                            <div class="widget general-heading none  widget-none  widget-compact-vertical" id="8865220a-d579-4ef3-8c99-91f9749d7883">
+                                                                                <div class="wrapped ">
+                                                                                    <div class="widget-body body body-none  body-compact-vertical">
+                                                                                        <div class="page-heading">
+                                                                                            <h1>Romani Studies</h1>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="widget general-heading none  widget-none  widget-compact-vertical" id="57dbc08f-57af-4f7e-b9c1-589f9ae27884">
+                                                                                <div class="wrapped ">
+                                                                                    <div class="widget-body body body-none  body-compact-vertical">
+                                                                                        <div class="page-heading">
+                                                                                            <h1></h1>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="widget literatumCoverDisplayWidget alignCenter  widget-none" id="bcd34222-ada2-4b22-8500-0e511dd4fcc8">
+                                                                                <div class="wrapped ">
+                                                                                    <div class="widget-body body body-none ">
+                                                                                        <div class="publicationCoverImage"> <img src="{% static 'Journal/assets/rost.2018.28.issue-2.cover.jpg' %}" alt="Publication Cover"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="widget literatumSerialDetails alignCenter  widget-none  widget-compact-all" id="7b1f8e20-6a6a-4328-b709-837a6f87c797">
+                                                                                <div class="wrapped ">
+                                                                                    <div class="widget-body body body-none  body-compact-all"><span class="serial-item serialDetailsIssn">        <span class="serial-title">Print ISSN:</span> 1528-0748</span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="widget literatumSerialDetails alignCenter  widget-none" id="b89d5e74-d439-4da4-af6d-b4446f2522dd">
+                                                                                <div class="wrapped ">
+                                                                                    <div class="widget-body body body-none "><span class="serial-item serialDetailsEissn">        <span class="serial-title">Online ISSN:</span> 1757-2274</span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="widget layout-two-columns none  widget-none  widget-compact-all" id="a104c655-882f-42c2-9f6c-790fb3d5d160">
+                                                                                <div class="wrapped ">
+                                                                                    <div class="widget-body body body-none  body-compact-all">
+                                                                                        <div class="pb-columns row-fluid ">
+                                                                                            <div class="width_7_16">
+                                                                                                <div data-pb-dropzone="left" class="pb-autoheight">
+                                                                                                    <div class="widget general-html none  widget-none  widget-compact-all" id="e0ea9318-316a-4636-9f72-3e8c4c8f7d38">
+                                                                                                        <div class="wrapped ">
+                                                                                                            <div class="widget-body body body-none  body-compact-all">
+                                                                                                                <ul>
+                                                                                                                    <li><a href="{% url 'issues' vol=lastv.volume_number iss=lasti.issue_number %}">Current issue</a> </li>
+                                                                                                                    <li><a href="{% url 'index' %}">List of issues</a></li>
+                                                                                                                </ul>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="width_9_16">
+                                                                                                <div data-pb-dropzone="right" class="pb-autoheight">
+                                                                                                    <div class="widget general-html none  widget-none  widget-compact-all" id="ee291897-aeb6-4204-8be1-39e04b38b135">
+                                                                                                        <div class="wrapped ">
+                                                                                                            <div class="widget-body body body-none  body-compact-all">
+                                                                                                                <ul>
+                                                                                                                    <li><a href="http://ebiz.turpin-distribution.com/products/235145-romani-studies-print-and-online.aspx">Subscribe</a> </li>
+                                                                                                                </ul>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <ul class="linkList separators navLinks">
+                                                <li><a href="/toc/rost/current">Current Issue</a></li>
+                                                <li><a href="/loi/rost">Available Issues</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget literatumSubscription none  widget-emphasis" id="56242ae5-0745-49da-8a30-e528b95799cb">
+                            <div class="wrapped ">
+                                <h1 class="widget-header header-emphasis ">Subscription Options</h1>
+                                <div class="widget-body body body-emphasis ">
+                                    <div class="offersList">
+                                        <form action="/action/ecommerce" id="subscriptionForm" method="get">
+                                            <div class="addOffer"> <input type="submit" name="addToCart" value="Add to cart" class="defButton"> <input type="hidden" name="backUri" value="/doi/abs/10.3828/rs.2018.7"></div>
+                                        </form>
+                                    </div>
+                                    <style>
+                                        .literatumSubscription {
+                                            display: none;
+                                        }
+                                    </style>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock content %}

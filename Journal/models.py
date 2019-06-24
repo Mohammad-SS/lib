@@ -43,6 +43,8 @@ class Article(models.Model):
     issue = models.ForeignKey(Issues , on_delete=models.CASCADE)
     cats = [('index' , 'index') , ('revs' , 'reviews') , ('RA' , 'research articles')]
     cat = models.CharField(max_length=6 , choices=cats , default='RA')
+    refrences = models.TextField(null=True , blank=True)
+    pdf = models.FileField(upload_to='pdfs')
     def __str__(self):
         return self.title
 

@@ -122,7 +122,7 @@
                                                                                         </td>
                                                                                         <td align="right" valign="top" width="10"></td>
                                                                                         <td valign="top">
-                                                                                            <div class="art_title linkable"><a class="ref nowrap" href="article.html1"><span class="hlFld-Title">{{article.title}}</span></a></div>
+                                                                                            <div class="art_title linkable"><a class="ref nowrap" href="{% url 'articlesabs' pk=article.id %}"><span class="hlFld-Title">{{article.title}}</span></a></div>
                                                                                             <div class="tocAuthors afterTitle">
                                                                                                 <div class="articleEntryAuthor all"><span class="articleEntryAuthorsLinks">
                                                                                                 {% for author in article.authors %}

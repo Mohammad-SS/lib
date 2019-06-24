@@ -1,3 +1,4 @@
+{% extends "Journal/base.html" %} {% load static %} {% block content %}
 <div class="wrapped ">
     <div class="widget-body body body-none  body-compact-all">
         <div class="pb-columns row-fluid gutterless">
@@ -15,7 +16,6 @@
                         <div class="wrapped ">
                             <div class="widget-body body body-none ">
                                 <script type="text/javascript">
-                                    <!-- // hide it from old browsersvar anyDbId = -1;var sideParts = {    citation: "<tr><td class=\"black9pt\" width=\"15\" valign=\"top\">&nbsp;&bull;&nbsp;<\/td><td class=\"black9pt\" valign=\"top\"><a href=\"javascript:newWindow('{$linkoutUrl}')\">{$display}<\/a><\/td><\/tr>",    citingIsi: "<tr><td class=\"black9pt\" width=\"15\" valign=\"top\">&nbsp;&bull;&nbsp;<\/td><td class=\"black9pt\" valign=\"top\">Search for citing articles in:<br/>&nbsp;<a href=\"javascript:newWindow('/servlet/linkout?suffix=s0&dbid=128&doi={$doi}&url={$urlEnc}')\">ISI Web of Science<\/a> ({$citNum} or more)<\/a><\/td><\/tr>",    citingCrossref: "<tr><td class=\"black9pt\" width=\"15\" valign=\"top\">&nbsp;&bull;&nbsp;<\/td><td class=\"black9pt\" valign=\"top\"><a href=\"{$url}\">Citing articles in Crossref<\/a><\/td><\/tr>",    quicksearch: "<option value=\"{$value}\">{$display}<\/option>",    related: ", <a href=\"javascript:newWindow('{$linkoutUrl}')\">{$display}<\/a>"};function genSide(part, dbid, linkoutUrl, display, doi, url, citNum, value) {    if (dbid != anyDbId && (562949953421311 & dbid) == 0) return;    var content = sideParts[part];    if (linkoutUrl) { content = content.replace(/{\$linkoutUrl}/g, linkoutUrl); }    if (display) { content = content.replace(/{\$display}/g, display); }    if (doi) { content = content.replace(/{\$doi}/g, doi); }    if (url) {        content = content.replace(/{\$url}/g, url);        content = content.replace(/{\$urlEnc}/g, encodeURIComponent(encodeURIComponent(url)));    }    if (citNum) { content = content.replace(/{\$citNum}/g, citNum); }    if (value) { content = content.replace(/{\$value}/g, value); }    document.write(content);}function hasSfxLinks() {	return false;}function genSfxLinks(id, url, doi) {    if (! doi) { doi = ""; }}function popSfxLink(prefix, id, url, doi) {    if (doi) {        url += "&id=doi:"+doi;    } else {        doi = "10.3828%2Frs.2018.7";    }    var redirect = prefix + encodeURIComponent("?sid=liverpool&genre=article"+url);    var href = "/servlet/linkout?suffix="+id+"&dbid=16384&doi="+doi+"&url=" + encodeURIComponent(redirect);    return newWindow(href);}var sfxRefDisplay = {64:"ADS",32:"CAS",8192:"CIS",256:"CSA",16:"Crossref",128:"ISI",4096:"JSTOR",8:"Medline",1099511627776: "Ichushi",17592186044416: "Medical Online",8796093022208: "J-Stage",2199023255552: "Medical Finder",4398046511104: "Pier Online"};window.onload=disableRefLinkWrite ;function genRefLink(dbid, id, key, textOfLink) {    if (562949953421311 & dbid != 0) {        if (typeof textOfLink === "undefined") {            if (sfxRefDisplay[dbid].substring(0,1) == "[") {                textOfLink = sfxRefDisplay[dbid];            } else {                textOfLink = "["+sfxRefDisplay[dbid]+"]";            }            // ToDo: move '[' and ']' to sfxRefDisplay (UPDATE: finish changing sfxRefDisplays and remove this branch)        }        else{ textOfLink = unescape(textOfLink)};        if(document.disableRefLinkWrite == null){            document.write("<a class='ref' href=\"javascript:popRefLink("+dbid+",'"+id+"','"+key+"')\">"+textOfLink+"<\/a>");        }    }}function disableRefLinkWrite () {    document.disableRefLinkWrite = true;}function popRefLink(dbid, id, key) {    var redirect = "/servlet/linkout?suffix=" + id + "&dbid=" + dbid + "&doi=10.3828%2Frs.2018.7&key=" + key;    return newWindow(redirect);}function popRefFull(rid, citart, ptype, area) {    return popRefImplFull(rid, citart, ptype, area, 600, 500);}function popRefImplFull(rid, citart, ptype, area, width, height) {    var doi = "10.3828%2Frs.2018.7";    if (! ptype) { ptype = ""; }    var pt = rid.charAt(0) + "rs20187" + ptype;    return popupFull(rid, doi, pt, area, width, height);}function popRef(rid, citart, ptype, area) {    return popRefImpl(rid, citart, ptype, area, 600, 500);}function popRef2(rid, citart, ptype, area) {    return popRefImpl(rid, citart, ptype, area, 400, 100);}function popRefImpl(rid, citart, ptype, area, width, height) {    var doi = "10.3828%2Frs.2018.7";    if (! citart) { citart = "citart1"; }    if (! ptype) { ptype = ""; }    var pt = rid.charAt(0) + "rs20187" + ptype;    return popupRef(citart, rid, doi, pt, area, width, height);}function genCitingCrossref() {}var citLinkDisplay = {        0:"SYSTEM",4:"SYSTEM",20:"SYSTEM",64:"ADS",32:"CAS",8192:"CIS",256:"CSA",16:"Crossref",128:"ISI",4096:"JSTOR",8:"MEDLINE"};var feeBasedMask = 4480;function genCitLink(dbid, suffix, key) {    if (dbid != anyDbId && (feeBasedMask & dbid) != 0 && (562949953421311 & dbid) == 0) return;    var param = "/servlet/linkout?suffix=" + suffix + "&dbid=" + dbid + "&doi=10.3828%2Frs.2018.7&key=" + key;    var display = citLinkDisplay[dbid];    var img = "/templates/jsp/_style2/_metaPress/images/" + display + "_btn.gif";    document.write("<a class='ref' href='javascript:newWindow(\"" + param + "\")'>");    document.write("<" + "img src='"+img+"' width='85' height='20' align='BOTTOM' alt='"+display+" Abstract' border='0'/>");    document.write("<\/a>");}// stop hiding -->
                                 </script>
                                 <script type="text/javascript" src="/swfobject.js"></script>
                                 <script type="text/javascript">
@@ -48,62 +48,90 @@
                                 <div class="articleMeta ja">
                                     <div class="hlFld-Title">
                                         <div class="publicationContentTitle">
-                                            <h1> <i>Teneke mahalles</i> in the late Ottoman capital: A socio-spatial ground for the co-inhabitation of Roma immigrants and the local poor </h1>
+                                            <h1> {{article.title}} </h1>
                                         </div>
                                     </div>
                                     <div class="articleMetaDrop publicationContentDropZone" data-pb-dropzone="articleMetaDropZone"> </div>
                                     <div class="publicationContentAuthors">
-                                        <div class="hlFld-ContribAuthor"><span class="contribDegrees"><a class="entryAuthor" href="/author/YILG%C3%9CR%2C+Egemen">Egemen YILGÜR </a><a href="#d2300e115" class="tooltipTrigger infoIcon"><span class="ui-helper-hidden-accessible">Related information</span></a>
-                                            <div id="d2300e115" class="ui-helper-hidden-accessible"><sup>1</sup><span class="institution">Egemen Ylgür is Associate Professor in the Department of Political Sciences and International Relations, Faculty of Social Sciences, Beykoz University.</span> Email:
-                                                <a
-                                                    class="email" href="mailto:tegemen1523@yahoo.com"><span class="nobrWithWbr">tegemen1523@yahoo.<wbr>com</span></a><br></div>
+                                        <div class="hlFld-ContribAuthor"><span class="contribDegrees">                                        {% for author in article.authors %}                                        <a class="entryAuthor">{{author}}</a>                                        {% endfor %}                                        <a href="#d2300e115" class="tooltipTrigger infoIcon"><span class="ui-helper-hidden-accessible">Related information</span></a>
                                             </span>
                                         </div>
                                         <div class="NLM_bio"></div>
                                         <div class="hlFld-AuthorNotes"></div>
                                     </div>
                                     <div class="articleMetaDrop publicationContentDropZone publicationContentDropZone1" data-pb-dropzone="articleMetaDropZone1"> </div>
-                                    <div class="publicationContentDoi"> <a href="https://doi.org/10.3828/rs.2018.7">https://doi.org/10.3828/rs.2018.7</a> </div>
+                                    <div class="publicationContentDoi"> <a href="{% url 'articleabs' pk=article.id %}">{% url 'articleabs' pk=article.id %}</a> </div>
                                     <div> </div>
                                 </div>
                                 <div class="publication-tabs ja publication-tabs-dropdown">
                                     <div class="tabs tabs-widget">
                                         <ul class="tab-nav" role="tablist">
-                                            <li class="active" role="tab"> <a href="article.html" class="show-abstract">                                                                        Abstract                                                            </a> </li>
-                                            <li role="tab">
-                                            <a href="ref.html" class="show-references">                                References                        </a> </li>
-                                            <li role="tab"> <a href="pdf.html" class="show-pdf" target="_self">                                        PDF                                </a> </li>
+                                            <li role="tab"> <a href="{% url 'articleabs' pk=article.id %}" class="show-abstract">                                                                        Abstract                                                            </a>                                                </li>
+                                            <li role="tab"> <a href="{% url 'articlerefs' pk=article.id %}" class="show-references">                                References                        </a> </li>
+                                            <li class="active" role="tab"> <a href="{% url 'articlepdf' pk=article.id %}" class="show-pdf" target="_self">                                        PDF                                </a> </li>
                                         </ul>
                                         <div class="tab-content ">
                                             <div class="tab tab-pane active">
-                                                <article class="article hideMathJax">
-                                                    <!-- abstract content -->
-                                                    <div class="hlFld-Abstract">
-                                                        <a name="abstract"></a>
-                                                        <div class="sectionInfo abstractSectionHeading">
-                                                            <div class="sectionHeading">Abstract</div>
+                                                <div id="accessDenialWidget">
+                                                    <div class="ecommDenial">
+                                                        <div class="accessMessage grey-line">
+                                                            <h3>Your Access Options</h3>
                                                         </div>
-                                                        <div class="abstractSection abstractInFull">
-                                                            <p xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">The term <i>teneke mahalle</i>, literally “tin can neighbourhood,” has been widely used since the Russo-Turkish War of 1877–1878 to describe a specific kind of urban fabrication, possibly poor
-                                                                and physically dilapidated, but also the sole, cheapest, and undoubtedly creative solution for the urgent housing needs of the poorest segments of the urban population. Even though these
-                                                                neighbourhoods were initially built at least partly by Muslim refugees, the Roma Mohadjirs,1 <i>teneke mahalles</i> also welcomed other poor members of society seeking informal, easily accessible,
-                                                                and safe housing in late Ottoman Istanbul. This study discusses the role of the Roma in the formation of <i>teneke mahalles</i>, and the socio-historical dynamics that directed the non-Roma
-                                                                poor to co-inhabitation with Roma in these <i>teneke mahalles</i>, and outlines their socio-economic and cultural profile from various respects on the basis of the two oldest examples of
-                                                                this socio-spatial and perceptual phenomenon in Istanbul.</p>
+                                                        <div class="login">
+                                                            <div class="loginForm">
+                                                                <h4 class="accessDenialLoginHeader">Log In</h4>
+                                                                <p class="note">If you have personal access to this content, log in with your username and password here:</p>
+                                                                {% if error %}
+                                                                <p class="note">{{error}}</p>
+                                                                {% endif %}
+                                                                <form action="{% url 'userlogin' pk=article.id %}" name="frmLogin" class="note denialLogin" method="post">
+                                                                {% csrf_token %}
+                                                                    <table border="0">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td><label for="login">Email or username:</label></td>
+                                                                                <td><input id="login" class="textInput" style="width:150px" type="text" name="login" value="" size="15"></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td><label for="password">Password:</label> </td>
+                                                                                <td><input id="password" class="textInput" style="width:150px" type="password" name="password" value="" autocomplete="off"> </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td></td>
+                                                                                <td class="ecommLoginButtonsTd"> <input class="ecommLoginSigninButton defButton" type="submit"
+                                                                                        name="submit" value="Login"> </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </form>
+                                                            </div>
+                                                            <div> </div>
+                                                            <div class="options-links"> <span class="passwordReminder"><a href="/action/requestResetPassword?redirectUri=%2Fdoi%2Fpdf%2F10.3828%2Frs.2018.7">Forgotten your password?</a></span>
+                                                                <div class="registration"> <a href="/action/registration?redirectUri=%2Fdoi%2Fpdf%2F10.3828%2Frs.2018.7">Register</a> </div>
+                                                            </div>
+                                                            <div class="options-links">
+                                                                <div id="openAthensSignIn"> <a href="/action/ssostart?idp=https%3A%2F%2Fidp.eduserv.org.uk%2Fopenathens&amp;redirectUri=https%3A%2F%2Fonline.liverpooluniversitypress.co.uk%2Fdoi%2Fpdf%2F10.3828%2Frs.2018.7">Login via OpenAthens</a>                                                                    </div> <span id="institutionLogin"><a href="/action/ssostart?redirectUri=%2Fdoi%2Fpdf%2F10.3828%2Frs.2018.7">Log In Via Your Institution</a></span>
+                                                                <div class="deepDyve"> </div>
+                                                            </div>
                                                         </div>
+                                                        <div class=" accessOptions">
+                                                            <hr>
+                                                            <div class="offersList">
+                                                                <h4 class="accessDenialPurchaseHeader">Purchase</h4>
+                                                                <div class="accessDenialPurchaseNote"></div>
+                                                                <form action="https://zarinpal.com/pg/StartPay/" id="ecommerceForm" method="get">
+                                                                {% csrf_token %}
+                                                                    <h2>Individual Offers</h2>
+                                                                    <div class="purchaseOption"> <input id="45" type="radio" name="offerId" value="14,10.3828/rs.2018.7" checked="checked"> Purchase this article - DOI 10.3828/rs.2018.7&nbsp;(online only): GBP 25.00 </div>
+                                                                    <div class="purchaseOption">
+                                                                        <input id="45" type="radio" name="offerId" value="13,10.3828/rs.2018.7"> Purchase this article - DOI 10.3828/rs.2018.7&nbsp;(online only): $35.00 </div>
+                                                                    <div class="addOffer"> <input type="submit" name="addToCart" value="Add to cart" class="defButton"> <input type="hidden" name="backUri" value="/doi/pdf/10.3828/rs.2018.7"> </div>
+                                                                </form>
+                                                            </div> <br> </div>
+                                                        <div style="clear:both"></div>
                                                     </div>
-                                                    <!-- /abstract content -->
-                                                    <div class="abstractKeywords">
-                                                        <div class="hlFld-KeywordText"><b>Keywords: </b>
-                                                            <kwd-group xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" language="en"><a href="/keyword/Teneke+Mahalle"><i>teneke mahalle</i></a>, <a href="/keyword/Gypsies+%5C%28k%C4%B1bt%C3%AE%5C%29">Gypsies (Kıbtî)</a>, <a href="/keyword/Istanbul">Istanbul</a>, <a href="/keyword/Poll+Tax+%5C%28cizye%5C%29">poll tax (<i>cizye</i>)</a>,
-                                                                <a href="/keyword/Immigrant+Roma">immigrant Roma</a>, <a href="/keyword/The+Russo-turkish+War+Of+1877%E2%80%931878">the Russo-Turkish War of 1877–1878</a>, <a href="/keyword/Kurds">Kurds</a>,
-                                                                <a href="/keyword/Armenians">Armenians</a>, <a href="/keyword/Posha+%5C%28bosha%5C%29">Posha (Bosha)</a>, <a href="/keyword/Co-inhabitation">co-inhabitation</a>, <a href="/keyword/Ottoman+Neighbourhoods">Ottoman neighbourhoods</a>,
-                                                                <a href="/keyword/Poverty">poverty</a></kwd-group>
-                                                        </div><span class="ellipsis" style="display:none">... Show All</span></div>
-                                                    <div class="response">
-                                                        <div class="sub-article-title"></div>
-                                                    </div>
-                                                </article>
+                                                    <div class="accessDenialDropZone2" data-pb-dropzone="accessDenialDropZone2"> </div>
+                                                </div>
                                             </div>
                                             <div class="tab tab-pane" id="relatedContent"> </div>
                                         </div>
@@ -136,8 +164,7 @@
                                                         <div style="margin: 7px 0 15px;">
                                                             <!-- Altmetric Code START -->
                                                             <script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
-                                                            <div data-badge-details="right" data-badge-type="medium-donut" data-doi="10.3828/rs.2018.7" data-condensed="true" data-hide-no-mentions="true" class="altmetric-embed altmetric-hidden"
-                                                                data-uuid="387fab89-164c-02b1-f7d4-1fee18c0722c"></div>
+                                                            <div data-badge-details="right" data-badge-type="medium-donut" data-doi="10.3828/rs.2018.7" data-condensed="true" data-hide-no-mentions="true" class="altmetric-embed altmetric-hidden" data-uuid="387fab89-164c-02b1-f7d4-1fee18c0722c"></div>
                                                             <!-- Altmetric Code END -->
                                                         </div>
                                                     </div>
@@ -235,8 +262,8 @@
                                                                                                     <div class="wrapped ">
                                                                                                         <div class="widget-body body body-none  body-compact-all">
                                                                                                             <ul>
-                                                                                                                <li><a href="/toc/rost/current">Current issue</a> </li>
-                                                                                                                <li><a href="/loi/rost">List of issues</a></li>
+                                                                                                                <li><a href="{% url 'issues' vol=lastv.volume_number iss=lasti.issue_number %}">Current issue</a> </li>
+                                                                                                                <li><a href="{% url 'index' %}">List of issues</a></li>
                                                                                                             </ul>
                                                                                                         </div>
                                                                                                     </div>
@@ -250,7 +277,6 @@
                                                                                                         <div class="widget-body body body-none  body-compact-all">
                                                                                                             <ul>
                                                                                                                 <li><a href="http://ebiz.turpin-distribution.com/products/235145-romani-studies-print-and-online.aspx">Subscribe</a> </li>
-                                                                                                                <li><a href="/action/doUpdateAlertSettings?action=addJournal&amp;journalCode=rost">Get TOC alerts</a></li>
                                                                                                             </ul>
                                                                                                         </div>
                                                                                                     </div>
@@ -283,7 +309,8 @@
                             <h1 class="widget-header header-emphasis ">Subscription Options</h1>
                             <div class="widget-body body body-emphasis ">
                                 <div class="offersList">
-                                    <form action="/action/ecommerce" id="subscriptionForm" method="get">
+                                    <form action="https://sandbox.zarinpal.com/pg/StartPay/" id="subscriptionForm" method="get">
+                                    {% csrf_token %}
                                         <div class="addOffer"> <input type="submit" name="addToCart" value="Add to cart" class="defButton"> <input type="hidden" name="backUri" value="/doi/abs/10.3828/rs.2018.7"></div>
                                     </form>
                                 </div>
@@ -299,4 +326,4 @@
             </div>
         </div>
     </div>
-</div>
+</div>{% endblock content %}
