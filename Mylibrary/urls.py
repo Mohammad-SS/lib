@@ -27,7 +27,8 @@ urlpatterns = [
     url(r'^issues/ref/(?P<pk>[0-9]+)$', views.articlesref , name='articlerefs'),
     url(r'^issues/pdf/(?P<pk>[0-9]+)$', views.articlespdf , name='articlepdf'),
     url(r'^purchase/(?P<pk>[0-9]+)$', views.login , name='userlogin'),
+    
 
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
