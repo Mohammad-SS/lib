@@ -9,6 +9,7 @@ from django.urls import reverse
 # Create your views here.
 
 def index(request):
+    pic = models.Configurations.objects.get(conf_name='logo').pic_url
     years = models.YearRange.objects.all().order_by('-low_year')
     for year in years:
         year.Volumes = year.volumes_set.all().order_by('-volume_number')
@@ -16,10 +17,11 @@ def index(request):
             volume.issue = volume.issues_set.all().order_by('-issue_number')
     lastV = models.Volumes.objects.all().order_by('-volume_number')[:1]
     lastI = lastV[0].issues_set.all().order_by('-issue_number')[:1]
-    context = {'years' : years , 'lasti' : lastI[0] , 'lastv' : lastV[0]} 
+    context = {'years' : years , 'lasti' : lastI[0] , 'lastv' : lastV[0] , "pic" : pic} 
     return render(request , "Journal/index.html" , context)
 
 def issues(request , vol , iss):
+    pic = models.Configurations.objects.get(conf_name='logo')
     lastV = models.Volumes.objects.all().order_by('-volume_number')[:1]
     lastI = lastV[0].issues_set.all().order_by('-issue_number')[:1]
     volume = models.Volumes.objects.get(volume_number=vol)
@@ -30,10 +32,11 @@ def issues(request , vol , iss):
             article.authors = article.authors.split(",")
         if article.keywords:
             article.keywords = article.keywords.split(",")
-    context = {'articles' : articles , 'issue' : issue , 'volume' : volume , 'vol' : vol , 'iss' : iss , 'lastv' : lastV[0] , 'lasti' : lastI[0]}
+    context = {'articles' : articles , 'issue' : issue , 'volume' : volume , 'vol' : vol , 'iss' : iss , 'lastv' : lastV[0] , 'lasti' : lastI[0] , "pic" : pic}
     return render(request , 'Journal/issue.html' , context)
 
 def articlesabs(request , pk):
+    pic = models.Configurations.objects.get(conf_name='logo')
     article = models.Article.objects.get(id=pk)
     lastV = models.Volumes.objects.all().order_by('-volume_number')[:1]
     lastI = lastV[0].issues_set.all().order_by('-issue_number')[:1]
@@ -41,12 +44,13 @@ def articlesabs(request , pk):
             article.authors = article.authors.split(",")
     if article.keywords:
             article.keywords = article.keywords.split(",")
-    context = {'article' : article , 'lastv' : lastV[0] , 'lasti' : lastI[0]}
+    context = {'article' : article , 'lastv' : lastV[0] , 'lasti' : lastI[0] , "pic" : pic}
     return render(request , 'Journal/abs.html' , context)
     # return HttpResponse("HELLO!")
     
 
 def articlesref(request , pk):
+    pic = models.Configurations.objects.get(conf_name='logo')
     article = models.Article.objects.get(id=pk)
     lastV = models.Volumes.objects.all().order_by('-volume_number')[:1]
     lastI = lastV[0].issues_set.all().order_by('-issue_number')[:1]
@@ -56,12 +60,13 @@ def articlesref(request , pk):
         article.keywords = article.keywords.split(",")
     if article.refrences:
         article.refrences = article.refrences.split("|")
-    context = {'article' : article , 'lastv' : lastV[0] , 'lasti' : lastI[0]}
+    context = {'article' : article , 'lastv' : lastV[0] , 'lasti' : lastI[0] , "pic" : pic}
     # return HttpResponse(article.refrences)
     return render(request , 'Journal/refs.html' , context)
     
 
 def articlespdf(request , pk):
+    pic = models.Configurations.objects.get(conf_name='logo')
     article = models.Article.objects.get(id=pk)
     lastV = models.Volumes.objects.all().order_by('-volume_number')[:1]
     lastI = lastV[0].issues_set.all().order_by('-issue_number')[:1]
@@ -69,7 +74,7 @@ def articlespdf(request , pk):
             article.authors = article.authors.split(",")
     if article.keywords:
             article.keywords = article.keywords.split(",")
-    context = {'article' : article , 'lastv' : lastV[0] , 'lasti' : lastI[0]}
+    context = {'article' : article , 'lastv' : lastV[0] , 'lasti' : lastI[0] , "pic" : pic}
     return render(request , 'Journal/pdfs.html' , context )    
 
 def login(request , pk):
